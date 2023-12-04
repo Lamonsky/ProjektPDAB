@@ -1,0 +1,66 @@
+﻿<Window x:Class="ProjektPDAB.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjektPDAB.Views"
+        mc:Ignorable="d"
+        Title="Sklep i Serwis Komputerowy Lamonski.pl" Height="900" Width="1600" Loaded="Window_Loaded">
+    <Window.Resources>
+        <ResourceDictionary Source="Resources/ViewResources.xaml"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="_System"/>
+        </Menu>
+
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TreeView Grid.Column="0">
+                <TreeViewItem Header="Sprzedaż" IsExpanded="True">
+                    <Button>Dostawcy</Button>
+                    <Button>Dostawy</Button>
+                    <Button>Klienci</Button>
+                    <Button>Koszyk</Button>
+                    <Button>Magazyn</Button>
+                    <Button>Pozycje Zamowienia</Button>
+                    <Button>Produkty</Button>
+                    <Button>Transakcje</Button>
+                    <Button>Zamówienia</Button>
+                    <Button>Wysyłki</Button>
+                </TreeViewItem>
+                <TreeViewItem Header="Serwis" IsExpanded="True">
+                    <Button>Serwisy</Button>
+                    <Button>Naprawy</Button>
+                    <Button>Opinie</Button>
+                    <Button>Klienci</Button>
+                    <Button>Produkty</Button>
+                    <Button>Zamówienia</Button>
+                </TreeViewItem>
+            </TreeView>
+            <HeaderedContentControl Background="Aqua" Content="{Binding Workspaces}" ContentTemplate="{StaticResource WorkspacesTemplate}" Style="{StaticResource MainHCCStyle}"/>
+        </Grid>
+
+
+
+        <StatusBar Grid.Row="2">
+            <StatusBarItem>
+                <TextBlock>WSB-NLU Damian Lamonski</TextBlock>
+            </StatusBarItem>
+            <StatusBarItem  HorizontalAlignment="Right">
+                <TextBlock x:FieldModifier="private" x:Name="myDateTime"/>
+            </StatusBarItem>
+        </StatusBar>
+
+
+    </Grid>
+</Window>

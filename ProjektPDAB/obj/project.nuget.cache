@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "AlY0OOIaHXqu5CXdRGfflUmOY+Il1Y4gpZFUSA7uAMC+iKphx8Mu7qgl9oCTg4f0qaWKNIHfju2Fzns5ZcdICg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\damia\\Documents\\GitHub\\ProjektPDAB\\ProjektPDAB\\ProjektPDAB.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\damia\\.nuget\\packages\\materialdesigncolors\\2.1.4\\materialdesigncolors.2.1.4.nupkg.sha512",
+    "C:\\Users\\damia\\.nuget\\packages\\materialdesignthemes\\4.9.0\\materialdesignthemes.4.9.0.nupkg.sha512",
+    "C:\\Users\\damia\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
+  ],
+  "logs": []
+}
