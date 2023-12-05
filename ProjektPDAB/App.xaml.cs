@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjektPDAB.ViewModels;
+using ProjektPDAB.Views;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +15,14 @@ namespace ProjektPDAB
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            //łaczymy viewModel z View
+            MainWindow window = new MainWindow();
+            var viewModel = new MainWindowViewModel();
+            window.DataContext = viewModel;
+            window.Show();
+        }
     }
 }

@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ProjektPDAB.Views"
+        xmlns:local="clr-namespace:ProjektPDAB"
         mc:Ignorable="d"
         Title="Sklep i Serwis Komputerowy Lamonski.pl" Height="900" Width="1600" Loaded="Window_Loaded">
     <Window.Resources>
@@ -11,14 +11,16 @@
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Menu>
             <MenuItem Header="_System"/>
+            <MenuItem Header="Dostawcy">
+                <MenuItem Header="Wszyscy Dostawcy" Command="{Binding DostawcyCommand}"/>
+            </MenuItem>
         </Menu>
-
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -27,7 +29,7 @@
             </Grid.ColumnDefinitions>
             <TreeView Grid.Column="0">
                 <TreeViewItem Header="Sprzedaż" IsExpanded="True">
-                    <Button>Dostawcy</Button>
+                    <Button Command="{Binding DostawcyCommand}">Dostawcy</Button>
                     <Button>Dostawy</Button>
                     <Button>Klienci</Button>
                     <Button>Koszyk</Button>
@@ -47,7 +49,14 @@
                     <Button>Zamówienia</Button>
                 </TreeViewItem>
             </TreeView>
-            <HeaderedContentControl Background="Aqua" Content="{Binding Workspaces}" ContentTemplate="{StaticResource WorkspacesTemplate}" Style="{StaticResource MainHCCStyle}"/>
+            <HeaderedContentControl
+                Grid.Column="1"
+                Header="Przestrzeń robocza"
+                Background="Aqua"
+                Content="{Binding Workspaces}"
+                ContentTemplate="{StaticResource WorkspacesTemplate}"
+                Style="{StaticResource MainHCCStyle}"
+                />
         </Grid>
 
 

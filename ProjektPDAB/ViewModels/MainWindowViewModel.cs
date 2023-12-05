@@ -8,39 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
+using System.Windows.Input;
 using ProjektPDAB.Helpers;
 
 namespace ProjektPDAB.ViewModels
 {
-    public class MainWindowViewModel : WorkspaceViewModel
+    public class MainWindowViewModel : BaseViewModel
     {
-        #region Commands
-        private ReadOnlyCollection<CommandViewModel> _Commands;
-        public ReadOnlyCollection<CommandViewModel> Commands
-        {
-            get
-            {
-                if (_Commands == null)
-                {
-                    //
-                    List<CommandViewModel> cmds = CreateCommands();
-                    //i ...
-                    _Commands = new ReadOnlyCollection<CommandViewModel>(cmds);
-                }
-                return _Commands;
-            }
-        }
-        private List<CommandViewModel> CreateCommands()
-        {
-            //tworze....
-            return new List<CommandViewModel>
-            {
-                //tu decyduje 
-                new CommandViewModel("Dodaj",new BaseCommand(CreateWindow)),
-                new CommandViewModel("Wyswietl",new BaseCommand(ShowWindow)),
-            };
-        }
-        #endregion
         #region Workspaces
         //
         private ObservableCollection<WorkspaceViewModel> _Workspaces;
@@ -100,14 +74,23 @@ namespace ProjektPDAB.ViewModels
                 collectionView.MoveCurrentTo(workspace);
         }
         #endregion
+        #region Komendy do Buttonow
+        public ICommand DostawcyCommand
+        {
+            get
+            {
+                return new BaseCommand(ShowDostawcy);
+            }
+        }
+        #endregion
         #region Funkcje wywolujace okna
         private void CreateWindow()
         {
             CreateWorkspace<NowyTowarViewModel>();
         }
-        private void ShowWindow()
+        private void ShowDostawcy()
         {
-            ShowAllWorkspace<NowyTowarViewModel>();
+            ShowAllWorkspace<DostawcyViewModel>();
         }
         #endregion
 

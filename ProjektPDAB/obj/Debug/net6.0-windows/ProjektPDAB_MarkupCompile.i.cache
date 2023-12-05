@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net6.0-windows\
+C:\Users\dlamonski\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net6.0-windows\
 ProjektPDAB
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\App.xaml
-2898475373
+C:\Users\dlamonski\Documents\GitHub\ProjektPDAB\ProjektPDAB\App.xaml
+4-1638583728
 
-12955142030
-197-1647762073
-Views\MainWindow.xaml;Views\Resources\ViewResources.xaml;
+371023034825
+225-1376813443
+Themes\Generic.xaml;Views\DostawcyView.xaml;Views\MainWindow.xaml;Views\Resources\ViewResources.xaml;
 
-True
+False
 

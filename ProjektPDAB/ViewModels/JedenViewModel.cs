@@ -1,4 +1,5 @@
 ﻿using ProjektPDAB.Helpers;
+using ProjektPDAB.Models.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace ProjektPDAB.ViewModels
     {
         #region DB
         //cała BD
-        //protected FakturyEntities fakturyEntities;
+        protected ProjektEntities projektEntities;
         //dodawany obiekt
         protected T item;
         #endregion
@@ -37,15 +38,15 @@ namespace ProjektPDAB.ViewModels
         public JedenViewModel(string displayName)
         {
             base.DisplayName = displayName;
-            //fakturyEntities = new FakturyEntities();
+            projektEntities = new ProjektEntities();
         }
         #endregion
 
         #region Pomocniczy
         public void Save()
         {
-            //fakturyEntities.Add(item);
-            //fakturyEntities.SaveChanges();
+            projektEntities.Add(item);
+            projektEntities.SaveChanges();
 
         }
         private void SaveAndClose()
