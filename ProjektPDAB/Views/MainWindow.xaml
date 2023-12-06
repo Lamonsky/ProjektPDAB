@@ -16,9 +16,34 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Menu>
-            <MenuItem Header="_System"/>
+            <MenuItem Header="_System"></MenuItem>
+            <MenuItem Header="Sposoby płatności">
+                <MenuItem Header="Wyświetl"  Command="{Binding WszystkieSposobyPlatnosciCommand}"/>
+                <MenuItem Header="Dodaj" Command="{Binding SposobPlatnosciDodajCommand}"/>
+            </MenuItem>
+            <MenuItem Header="Serwis">
+                <MenuItem Header="Wyświetl"  Command="{Binding WszystkieSerwisyCommand}"/>
+                <MenuItem Header="Dodaj" Command="{Binding NowySerwisCommand}"/>
+            </MenuItem>
+            <MenuItem Header="Pracownicy">
+                <MenuItem Header="Wyświetl"  Command="{Binding WszyscyPracownicyCommand}"/>
+                <MenuItem Header="Dodaj" Command="{Binding NowyPracownikCommand}"/>
+            </MenuItem>
+            <MenuItem Header="Klienci">
+                <MenuItem Header="Wyświetl"  Command="{Binding WszyscyKlienciCommand}"/>
+                <MenuItem Header="Dodaj" Command="{Binding NowyKlientCommand}"/>
+            </MenuItem>
+            <MenuItem Header="Kategorie">
+                <MenuItem Header="Wyświetl"  Command="{Binding WszystkieKategorieCommand}"/>
+                <MenuItem Header="Dodaj" Command="{Binding NowaKategoriaCommand}"/>
+            </MenuItem>
             <MenuItem Header="Dostawcy">
-                <MenuItem Header="Wszyscy Dostawcy" Command="{Binding DostawcyCommand}"/>
+                <MenuItem Header="Wyświetl"  Command="{Binding WszyscyDostawcyCommand}"/>
+                <MenuItem Header="Dodaj" Command="{Binding NowyDostawcaCommand}"/>
+            </MenuItem>
+            <MenuItem Header="Adresy">
+                <MenuItem Header="Wyświetl"  Command="{Binding WszystkieAdresyCommand}"/>
+                <MenuItem Header="Dodaj" Command="{Binding NowyAdresCommand}"/>
             </MenuItem>
         </Menu>
 
@@ -29,11 +54,10 @@
             </Grid.ColumnDefinitions>
             <TreeView Grid.Column="0">
                 <TreeViewItem Header="Sprzedaż" IsExpanded="True">
-                    <Button Command="{Binding DostawcyCommand}">Dostawcy</Button>
-                    <Button>Dostawy</Button>
+                    <Button Command="{Binding WszyscyDostawcyCommand}">Dostawcy</Button>
+                    <Button Command="{Binding NowyDostawcaCommans}">Dodaj Dostawce</Button>
                     <Button>Klienci</Button>
                     <Button>Koszyk</Button>
-                    <Button>Magazyn</Button>
                     <Button>Pozycje Zamowienia</Button>
                     <Button>Produkty</Button>
                     <Button>Transakcje</Button>
@@ -41,9 +65,8 @@
                     <Button>Wysyłki</Button>
                 </TreeViewItem>
                 <TreeViewItem Header="Serwis" IsExpanded="True">
-                    <Button>Serwisy</Button>
+                    <Button Command="{Binding WszystkieSerwisyCommand}">Serwisy</Button>
                     <Button>Naprawy</Button>
-                    <Button>Opinie</Button>
                     <Button>Klienci</Button>
                     <Button>Produkty</Button>
                     <Button>Zamówienia</Button>

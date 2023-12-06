@@ -22,7 +22,7 @@ public partial class Pracownicy
     [StringLength(50)]
     public string? Stanowisko { get; set; }
 
-    [Column(TypeName = "date")]
+    [Column(TypeName = "datetime")]
     public DateTime? DataZatrudnienia { get; set; }
 
     [StringLength(50)]

@@ -5,17 +5,64 @@
 
     
 
-    <DataTemplate DataType="{x:Type vm:DostawcyViewModel}">
-        <vw:DostawcyView/>
+    <DataTemplate DataType="{x:Type vm:WszyscyDostawcyViewModel}">
+        <vw:WszyscyDostawcyView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowyDostawcaViewModel}">
+        <vw:NowyDostawcaView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieSposobyPlatnosciViewModel}">
+        <vw:WszystkieSposobyPlatnosciView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowySposobPlatnosciViewModel}">
+        <vw:NowySposobPlatnosciView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieSerwisyViewModel}">
+        <vw:WszystkieSerwisyView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowySerwisViewModel}">
+        <vw:NowySerwisView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowyPracownikViewModel}">
+        <vw:NowyPracownikView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszyscyPracownicyViewModel}">
+        <vw:WszyscyPracownicyView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszyscyKlienciViewModel}">
+        <vw:WszyscyKlienciView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowyKlientViewModel}">
+        <vw:NowyKlientView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieKategorieViewModel}">
+        <vw:WszystkieKategorieView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowaKategoriaViewModel}">
+        <vw:NowaKategoriaView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieAdresyViewModel}">
+        <vw:WszystkieAdresyView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowyAdresViewModel}">
+        <vw:NowyAdresView/>
     </DataTemplate>
 
 
-
-
     <Style TargetType="{x:Type MenuItem}">
-        <Setter Property="Width" Value="1000"/>
+        <Setter Property="Width" Value="auto"/>
+        <Setter Property="Margin" Value="2,5,2,5"/>
     </Style>
 
+    <Style TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="2,2,2,2"/>
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
+
+    <Style TargetType="{x:Type ToggleButton}">
+        
+    </Style>
+    
     <Style x:Key="MainHCCStyle" TargetType="{x:Type HeaderedContentControl}">
         <Setter Property="HeaderTemplate">
             <Setter.Value>

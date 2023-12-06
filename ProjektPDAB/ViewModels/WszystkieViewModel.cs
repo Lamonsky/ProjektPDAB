@@ -57,7 +57,7 @@ namespace ProjektPDAB.ViewModels
         {
             base.DisplayName = displayName;//to jest ustawienie nazwy zkładki
             //tworze obiekt dostepowy do BD
-            //fakturyEntities = new FakturyEntities();
+            projektEntities = new ProjektEntities();
         }
         #endregion
         #region Pomocniczy

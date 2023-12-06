@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Input;
 using ProjektPDAB.Helpers;
+using ProjektPDAB.Models.Entities;
+using ProjektPDAB.Views;
 
 namespace ProjektPDAB.ViewModels
 {
@@ -75,22 +77,161 @@ namespace ProjektPDAB.ViewModels
         }
         #endregion
         #region Komendy do Buttonow
-        public ICommand DostawcyCommand
+        public ICommand WszyscyDostawcyCommand
         {
             get
             {
                 return new BaseCommand(ShowDostawcy);
             }
         }
+        public ICommand NowyDostawcaCommand
+        {
+            get
+            {
+                return new BaseCommand(CreateDostawca);
+            }
+        }
+        public ICommand WszystkieSposobyPlatnosciCommand
+        {
+            get
+            {
+                return new BaseCommand(ShowSposobPlatnosci);
+            }
+        }
+        public ICommand SposobPlatnosciDodajCommand
+        {
+            get
+            {
+                return new BaseCommand(CreateSposobPlatnosci);
+            }
+        }
+        public ICommand WszystkieSerwisyCommand
+        {
+            get
+            {
+                return new BaseCommand(ShowSerwisy);
+            }
+        }
+        public ICommand NowySerwisCommand
+        {
+            get
+            {
+                return new BaseCommand(CreateSerwis);
+            }
+        }
+        public ICommand NowyPracownikCommand
+        {
+            get
+            {
+                return new BaseCommand(CreatePracownik);
+            }
+        }
+        public ICommand WszyscyPracownicyCommand
+        {
+            get
+            {
+                return new BaseCommand(ShowPracownicy);
+            }
+        }
+        public ICommand WszyscyKlienciCommand
+        {
+            get
+            {
+                return new BaseCommand(ShowKlienci);
+            }
+        }
+        public ICommand NowyKlientCommand
+        {
+            get
+            {
+                return new BaseCommand(CreateKlient);
+            }
+        }
+        public ICommand WszystkieKategorieCommand
+        {
+            get
+            {
+                return new BaseCommand(ShowKategorie);
+            }
+        }
+        public ICommand NowaKategoriaCommand
+        {
+            get
+            {
+                return new BaseCommand(CreateKategoria);
+            }
+        }
+        public ICommand WszystkieAdresyCommand
+        {
+            get
+            {
+                return new BaseCommand(ShowAdresy);
+            }
+        }
+        public ICommand NowyAdresCommand
+        {
+            get
+            {
+                return new BaseCommand(CreateAdres);
+            }
+        }
         #endregion
         #region Funkcje wywolujace okna
-        private void CreateWindow()
+        private void CreateDostawca()
         {
-            CreateWorkspace<NowyTowarViewModel>();
+            CreateWorkspace<NowyDostawcaViewModel>();
         }
         private void ShowDostawcy()
         {
-            ShowAllWorkspace<DostawcyViewModel>();
+            ShowAllWorkspace<WszyscyDostawcyViewModel>();
+        }
+        private void ShowSposobPlatnosci()
+        {
+            ShowAllWorkspace<WszystkieSposobyPlatnosciViewModel>();
+        }
+        private void CreateSposobPlatnosci()
+        {
+            CreateWorkspace<NowySposobPlatnosciViewModel>();
+        }
+        private void ShowSerwisy()
+        {
+            ShowAllWorkspace<WszystkieSerwisyViewModel>();
+        }
+        private void CreateSerwis()
+        {
+            CreateWorkspace<NowySerwisViewModel>();
+        }
+        private void CreatePracownik()
+        {
+            CreateWorkspace<NowyPracownikViewModel>();
+        }
+        private void ShowPracownicy()
+        {
+            ShowAllWorkspace<WszyscyPracownicyViewModel>();
+        }
+        private void ShowKlienci()
+        {
+            ShowAllWorkspace<WszyscyKlienciViewModel>();
+        }
+        private void CreateKlient()
+        {
+            CreateWorkspace<NowyKlientViewModel>();
+        }
+        private void ShowKategorie()
+        {
+            ShowAllWorkspace<WszystkieKategorieViewModel>();
+        }
+        private void CreateKategoria()
+        {
+            CreateWorkspace<NowaKategoriaViewModel>();
+        }
+        private void ShowAdresy()
+        {
+            ShowAllWorkspace<WszystkieAdresyViewModel>();
+        }
+        private void CreateAdres()
+        {
+            CreateWorkspace<NowyAdresViewModel>();
         }
         #endregion
 

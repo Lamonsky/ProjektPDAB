@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\dlamonski\Documents\GitHub\ProjektPDAB\ProjektPDAB\App.xaml
-4-1638583728
+171384007009
 
-35-166201465
+601248154325
 225-1376813443
-Themes\Generic.xaml;Views\DostawcyView.xaml;Views\MainWindow.xaml;Views\Resources\ViewResources.xaml;
+Themes\Generic.xaml;Views\MainWindow.xaml;Views\NowaKategoriaView.xaml;Views\NowyAdresView.xaml;Views\NowyDostawcaView.xaml;Views\NowyKlientView.xaml;Views\NowyPracownikView.xaml;Views\NowySerwisView.xaml;Views\NowySposobPlatnosciView.xaml;Views\Resources\ViewResources.xaml;Views\WszyscyDostawcyView.xaml;Views\WszyscyKlienciView.xaml;Views\WszyscyPracownicyView.xaml;Views\WszystkieAdresyView.xaml;Views\WszystkieKategorieView.xaml;Views\WszystkieSerwisyView.xaml;Views\WszystkieSposobyPlatnosciView.xaml;
 
-True
+False
 

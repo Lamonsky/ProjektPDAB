@@ -21,6 +21,7 @@ namespace ProjektPDAB.ViewModels
 
         #region Command
         private BaseCommand _SaveAndCloseCommand;
+        private BaseCommand _SaveCommand;
         //ta komenda bedzie podpieta pod przycisk Zapisz i Zamknik
         public ICommand SaveAndCloseCommand
         {
@@ -30,6 +31,14 @@ namespace ProjektPDAB.ViewModels
                     //kom....
                     _SaveAndCloseCommand = new BaseCommand(SaveAndClose);
                 return _SaveAndCloseCommand;
+            }
+        }
+        public ICommand SaveCommand
+        {
+            get
+            {
+                _SaveCommand = new BaseCommand(Save);
+                return _SaveCommand;
             }
         }
         #endregion

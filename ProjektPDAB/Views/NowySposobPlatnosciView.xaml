@@ -1,0 +1,22 @@
+﻿<local:JedenViewBase x:Class="ProjektPDAB.Views.NowySposobPlatnosciView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjektPDAB.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Label Content="Nazwa Sposobu Płatności" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBox Grid.Column="1" Width="250" Height="50" HorizontalAlignment="Left" VerticalAlignment="Center"
+         Text="{Binding Path=Nazwa, UpdateSourceTrigger=PropertyChanged}"/>
+    </Grid>
+</local:JedenViewBase>

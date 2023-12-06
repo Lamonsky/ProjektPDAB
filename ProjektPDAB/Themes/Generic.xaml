@@ -13,10 +13,10 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <ToolBar Grid.Row="0" Height="30" Margin="0,2,0,2">
-                            <ToggleButton Content="+" Width="30" Height="30"/>
-                            <ToggleButton Content="-" Width="30" Height="30"/>
-                            <ToggleButton Content="M" Width="30" Height="30"/>
-                            <ToggleButton Content="O" Width="30" Height="30"/>
+                            <Button Content="+" Width="30" Height="30"/>
+                            <Button Content="-" Width="30" Height="30"/>
+                            <Button Content="M" Width="30" Height="30"/>
+                            <Button Content="O" Width="30" Height="30"/>
                         </ToolBar>
                         <StackPanel Grid.Row="1" Background="Azure">
                             <Label>Tu bedzie filtrowanie i sortowanie</Label>
@@ -39,6 +39,7 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <ToolBar Grid.Row="0" Height="30" Margin="0,2,0,2">
+                            <ToggleButton Content="Zapisz" Command="{Binding SaveCommand}"/>
                             <ToggleButton Content="Zapisz i zamknij" Command="{Binding SaveAndCloseCommand}"/>
                             <ToggleButton Content="Anuluj" Command="{Binding CancelCommand}"/>
                         </ToolBar>
