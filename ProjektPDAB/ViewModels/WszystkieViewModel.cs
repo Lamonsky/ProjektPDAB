@@ -1,4 +1,5 @@
-﻿using ProjektPDAB.Helpers;
+﻿using GalaSoft.MvvmLight.Messaging;
+using ProjektPDAB.Helpers;
 using ProjektPDAB.Models.Context;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,18 @@ namespace ProjektPDAB.ViewModels
                     _LoadCommand = new BaseCommand(() => load());
                 }
                 return _LoadCommand;
+            }
+        }
+        private BaseCommand _AddCommand;
+        public ICommand AddCommand
+        {
+            get
+            {
+                if (_AddCommand == null)
+                {
+                    _AddCommand = new BaseCommand(() => add());
+                }
+                return _AddCommand;
             }
         }
         #endregion
@@ -63,6 +76,10 @@ namespace ProjektPDAB.ViewModels
         #region Pomocniczy
         //
         public abstract void load();
+        private void add()
+        {
+            Messenger.Default.Send(DisplayName + "Add");
+        }
         #endregion
     }
 }

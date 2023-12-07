@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Input;
+using GalaSoft.MvvmLight.Messaging;
 using ProjektPDAB.Helpers;
 using ProjektPDAB.Models.Entities;
 using ProjektPDAB.Views;
@@ -76,6 +77,47 @@ namespace ProjektPDAB.ViewModels
                 collectionView.MoveCurrentTo(workspace);
         }
         #endregion
+        #region Commands
+        private ReadOnlyCollection<CommandViewModel> _Commands;
+        public ReadOnlyCollection<CommandViewModel> Commands
+        {
+            get
+            {
+                if (_Commands == null)
+                {
+                    //
+                    List<CommandViewModel> cmds = CreateCommands();
+                    //i ...
+                    _Commands = new ReadOnlyCollection<CommandViewModel>(cmds);
+                }
+                return _Commands;
+            }
+        }
+        private List<CommandViewModel> CreateCommands()
+        {
+            Messenger.Default.Register<string>(this, open);
+            //tworze....
+            return new List<CommandViewModel>
+            {
+                //tu decyduje 
+                new CommandViewModel("Dostawy", new BaseCommand(ShowDostawy)),
+                new CommandViewModel("Pracownik",new BaseCommand(CreatePracownik)),
+                new CommandViewModel("Pracownicy",new BaseCommand(ShowPracownicy)),
+                new CommandViewModel("Serwis",new BaseCommand(CreateSerwis)),
+                new CommandViewModel("Serwisy",new BaseCommand(ShowSerwisy)),
+            };
+        }
+        private void open(string name)
+        {
+            switch (name)
+            {
+                case "DostawyAdd":
+                    CreateDostawa();
+                    break;
+            }
+        }
+        #endregion
+
         #region Komendy do Buttonow
         public ICommand WszyscyDostawcyCommand
         {
@@ -175,6 +217,20 @@ namespace ProjektPDAB.ViewModels
                 return new BaseCommand(CreateAdres);
             }
         }
+        public ICommand WszystkieDostawyCommand
+        {
+            get
+            {
+                return new BaseCommand(ShowDostawy);
+            }
+        }
+        public ICommand NowaDostawaCommand
+        {
+            get
+            {
+                return new BaseCommand(CreateDostawa);
+            }
+        }
         #endregion
         #region Funkcje wywolujace okna
         private void CreateDostawca()
@@ -233,7 +289,14 @@ namespace ProjektPDAB.ViewModels
         {
             CreateWorkspace<NowyAdresViewModel>();
         }
+        private void ShowDostawy()
+        {
+            ShowAllWorkspace<WszystkieDostawyViewModel>();
+        }
+        private void CreateDostawa()
+        {
+            CreateWorkspace<NowaDostawaViewModel>();
+        }
         #endregion
-
     }
 }

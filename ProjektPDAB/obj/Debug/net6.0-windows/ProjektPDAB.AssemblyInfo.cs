@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProjektPDAB")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a0de516001bc8970a9a34a8392d9e08335b8a6aa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+48ae509957c1291cb1370c2578e3ce26cf100890")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProjektPDAB")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProjektPDAB")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -45,6 +45,11 @@
                 <MenuItem Header="Wyświetl"  Command="{Binding WszystkieAdresyCommand}"/>
                 <MenuItem Header="Dodaj" Command="{Binding NowyAdresCommand}"/>
             </MenuItem>
+            <MenuItem Header="Z kluczami obcymi"/>
+            <MenuItem Header="Dostawy">
+                <MenuItem Header="Wyświetl"  Command="{Binding WszystkieDostawyCommand}"/>
+                <MenuItem Header="Dodaj" Command="{Binding NowaDostawaCommand}"/>
+            </MenuItem>
         </Menu>
 
         <Grid Grid.Row="1">
@@ -52,34 +57,20 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TreeView Grid.Column="0">
-                <TreeViewItem Header="Sprzedaż" IsExpanded="True">
-                    <Button Command="{Binding WszyscyDostawcyCommand}">Dostawcy</Button>
-                    <Button Command="{Binding NowyDostawcaCommans}">Dodaj Dostawce</Button>
-                    <Button>Klienci</Button>
-                    <Button>Koszyk</Button>
-                    <Button>Pozycje Zamowienia</Button>
-                    <Button>Produkty</Button>
-                    <Button>Transakcje</Button>
-                    <Button>Zamówienia</Button>
-                    <Button>Wysyłki</Button>
-                </TreeViewItem>
-                <TreeViewItem Header="Serwis" IsExpanded="True">
-                    <Button Command="{Binding WszystkieSerwisyCommand}">Serwisy</Button>
-                    <Button>Naprawy</Button>
-                    <Button>Klienci</Button>
-                    <Button>Produkty</Button>
-                    <Button>Zamówienia</Button>
-                </TreeViewItem>
-            </TreeView>
             <HeaderedContentControl
+                Grid.Column="0"
+                Header="Operacje"
+                Background="Aqua"
+                Content="{Binding Commands}"
+                ContentTemplate="{StaticResource CommandsTemplate}"
+                Style="{StaticResource MainHCCStyle}"/>
+                <HeaderedContentControl
                 Grid.Column="1"
                 Header="Przestrzeń robocza"
                 Background="Aqua"
                 Content="{Binding Workspaces}"
                 ContentTemplate="{StaticResource WorkspacesTemplate}"
-                Style="{StaticResource MainHCCStyle}"
-                />
+                Style="{StaticResource MainHCCStyle}"/>
         </Grid>
 
 
