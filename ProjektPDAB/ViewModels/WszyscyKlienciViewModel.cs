@@ -11,7 +11,7 @@ namespace ProjektPDAB.ViewModels
     class WszyscyKlienciViewModel : WszystkieViewModel<Klienci>
     {
         #region Konstruktor
-        public WszyscyKlienciViewModel() : base("Klienci"){  }
+        public WszyscyKlienciViewModel() : base("Klienci") { }
         #endregion
         #region Helpers
         public override void load()

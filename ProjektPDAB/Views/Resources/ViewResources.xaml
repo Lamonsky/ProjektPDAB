@@ -3,7 +3,7 @@
                     xmlns:vm="clr-namespace:ProjektPDAB.ViewModels"
                     xmlns:vw="clr-namespace:ProjektPDAB.Views">
 
-    
+
 
     <DataTemplate DataType="{x:Type vm:WszyscyDostawcyViewModel}">
         <vw:WszyscyDostawcyView/>
@@ -53,6 +53,20 @@
     <DataTemplate DataType="{x:Type vm:NowaDostawaViewModel}">
         <vw:NowaDostawaView/>
     </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieFakturyViewModel}">
+        <vw:WszystkieFakturyView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowaFakturaViewModel}">
+        <vw:NowaFakturaView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieNaprawyViewModel}">
+        <vw:WszystkieNaprawyView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowaNaprawaViewModel}">
+        <vw:NowaNaprawaView/>
+    </DataTemplate>
+
+
 
 
     <Style TargetType="{x:Type MenuItem}">

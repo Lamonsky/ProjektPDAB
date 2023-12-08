@@ -13,7 +13,7 @@ namespace ProjektPDAB.ViewModels
     internal class WszystkieSposobyPlatnosciViewModel : WszystkieViewModel<SposobPlatnosci>
     {
         #region Kontruktor
-        public WszystkieSposobyPlatnosciViewModel() : base("Sposoby Płatności"){ }
+        public WszystkieSposobyPlatnosciViewModel() : base("Sposoby Płatności") { }
         #endregion
         #region Helpers
         public override void load()

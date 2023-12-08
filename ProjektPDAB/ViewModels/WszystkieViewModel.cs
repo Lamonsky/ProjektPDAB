@@ -13,7 +13,7 @@ namespace ProjektPDAB.ViewModels
 {
     //
     //
-    public abstract class WszystkieViewModel<T>:WorkspaceViewModel
+    public abstract class WszystkieViewModel<T> : WorkspaceViewModel
     {
         #region DB
         protected readonly ProjektEntities projektEntities;
@@ -68,7 +68,7 @@ namespace ProjektPDAB.ViewModels
         #region Konstruktor
         public WszystkieViewModel(string displayName)
         {
-            base.DisplayName = displayName;//to jest ustawienie nazwy zkładki
+            DisplayName = displayName;//to jest ustawienie nazwy zkładki
             //tworze obiekt dostepowy do BD
             projektEntities = new ProjektEntities();
         }

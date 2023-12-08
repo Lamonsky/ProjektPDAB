@@ -26,7 +26,7 @@ namespace ProjektPDAB.ViewModels
             }
             set
             {
-                if(item.DataDostawy != value)
+                if (item.DataDostawy != value)
                 {
                     item.DataDostawy = value;
                     OnPropertyChanged(() => DataDostawy);
@@ -67,7 +67,7 @@ namespace ProjektPDAB.ViewModels
         {
             get
             {
-                return(
+                return (
                     from NazwaDostawcy in projektEntities.Dostawcies
                     select NazwaDostawcy
                 ).ToList().AsQueryable();

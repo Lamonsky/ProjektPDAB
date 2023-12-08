@@ -1,7 +1,6 @@
 ﻿using ProjektPDAB.Models.Context;
 using ProjektPDAB.Models.Entities;
-using ProjektPDAB.Views;
-using ProjektPDAB.Helpers;
+using ProjektPDAB.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

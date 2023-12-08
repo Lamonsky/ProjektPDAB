@@ -10,8 +10,9 @@ namespace ProjektPDAB.ViewModels
     class NowyAdresViewModel : JedenViewModel<Adre>
     {
         #region Konstruktor
-        public NowyAdresViewModel() : base("Adresy") { 
-            item = new Adre(); 
+        public NowyAdresViewModel() : base("Adresy")
+        {
+            item = new Adre();
         }
         #endregion
         #region Dane

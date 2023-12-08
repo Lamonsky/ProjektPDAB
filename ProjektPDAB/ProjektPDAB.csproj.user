@@ -10,13 +10,25 @@
     <Compile Update="Views\NowaDostawaView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\NowaFakturaView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\NowaNaprawaView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\NowyAdresView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\NowyDostawcaView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\WszystkieNaprawyView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\WszyscyDostawcyView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\WszystkieFakturyView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\MainWindow.xaml.cs">
@@ -66,13 +78,25 @@
     <Page Update="Views\NowaDostawaView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\NowaFakturaView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\NowaNaprawaView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\NowyAdresView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\NowyDostawcaView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\WszystkieNaprawyView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\WszyscyDostawcyView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\WszystkieFakturyView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\MainWindow.xaml">

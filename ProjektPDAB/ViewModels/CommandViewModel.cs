@@ -7,16 +7,16 @@ using System.Windows.Input;
 
 namespace ProjektPDAB.ViewModels
 {
-    public class CommandViewModel:BaseViewModel
+    public class CommandViewModel : BaseViewModel
     {
         #region Properties
-        public string  DisplayName { get; set; }
+        public string DisplayName { get; set; }
         public ICommand Command { get; set; }
         #endregion
         #region Konstruktor
-        public CommandViewModel(string displayName,ICommand command)
+        public CommandViewModel(string displayName, ICommand command)
         {
-            DisplayName = displayName;  
+            DisplayName = displayName;
             Command = command;
         }
         #endregion

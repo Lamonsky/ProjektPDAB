@@ -17,39 +17,6 @@
         </Grid.RowDefinitions>
         <Menu>
             <MenuItem Header="_System"></MenuItem>
-            <MenuItem Header="Sposoby płatności">
-                <MenuItem Header="Wyświetl"  Command="{Binding WszystkieSposobyPlatnosciCommand}"/>
-                <MenuItem Header="Dodaj" Command="{Binding SposobPlatnosciDodajCommand}"/>
-            </MenuItem>
-            <MenuItem Header="Serwis">
-                <MenuItem Header="Wyświetl"  Command="{Binding WszystkieSerwisyCommand}"/>
-                <MenuItem Header="Dodaj" Command="{Binding NowySerwisCommand}"/>
-            </MenuItem>
-            <MenuItem Header="Pracownicy">
-                <MenuItem Header="Wyświetl"  Command="{Binding WszyscyPracownicyCommand}"/>
-                <MenuItem Header="Dodaj" Command="{Binding NowyPracownikCommand}"/>
-            </MenuItem>
-            <MenuItem Header="Klienci">
-                <MenuItem Header="Wyświetl"  Command="{Binding WszyscyKlienciCommand}"/>
-                <MenuItem Header="Dodaj" Command="{Binding NowyKlientCommand}"/>
-            </MenuItem>
-            <MenuItem Header="Kategorie">
-                <MenuItem Header="Wyświetl"  Command="{Binding WszystkieKategorieCommand}"/>
-                <MenuItem Header="Dodaj" Command="{Binding NowaKategoriaCommand}"/>
-            </MenuItem>
-            <MenuItem Header="Dostawcy">
-                <MenuItem Header="Wyświetl"  Command="{Binding WszyscyDostawcyCommand}"/>
-                <MenuItem Header="Dodaj" Command="{Binding NowyDostawcaCommand}"/>
-            </MenuItem>
-            <MenuItem Header="Adresy">
-                <MenuItem Header="Wyświetl"  Command="{Binding WszystkieAdresyCommand}"/>
-                <MenuItem Header="Dodaj" Command="{Binding NowyAdresCommand}"/>
-            </MenuItem>
-            <MenuItem Header="Z kluczami obcymi"/>
-            <MenuItem Header="Dostawy">
-                <MenuItem Header="Wyświetl"  Command="{Binding WszystkieDostawyCommand}"/>
-                <MenuItem Header="Dodaj" Command="{Binding NowaDostawaCommand}"/>
-            </MenuItem>
         </Menu>
 
         <Grid Grid.Row="1">

@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace ProjektPDAB.ViewModels
 {
-    internal class NowySposobPlatnosciViewModel:JedenViewModel<SposobPlatnosci>
+    internal class NowySposobPlatnosciViewModel : JedenViewModel<SposobPlatnosci>
     {
         #region Konstruktor
-        public NowySposobPlatnosciViewModel() : base("Sposób Płatności") {
+        public NowySposobPlatnosciViewModel() : base("Sposób Płatności")
+        {
             item = new SposobPlatnosci();
         }
         #endregion

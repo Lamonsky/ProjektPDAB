@@ -1,0 +1,23 @@
+﻿<local:WszystkieViewBase x:Class="ProjektPDAB.Views.WszystkieNaprawyView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjektPDAB.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Idnaprawy}"/>
+                <DataGridTextColumn Header="Data Naprawy" Binding="{Binding DataNaprawy}"/>
+                <DataGridTextColumn Header="Status Naprawy" Binding="{Binding StatusNaprawy}"/>
+                <DataGridTextColumn Header="Nazwa Serwisu" Binding="{Binding NazwaSerwisu}"/>
+                <DataGridTextColumn Header="Kontakt" Binding="{Binding Kontakt}"/>
+                <DataGridTextColumn Header="Adres" Binding="{Binding Adres}"/>
+                <DataGridTextColumn Header="Nazwa Produktu" Binding="{Binding Nazwa}"/>
+                <DataGridTextColumn Header="Kategoria Produktu" Binding="{Binding NazwaKategorii}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</local:WszystkieViewBase>

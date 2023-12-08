@@ -101,10 +101,10 @@ namespace ProjektPDAB.ViewModels
             {
                 //tu decyduje 
                 new CommandViewModel("Dostawy", new BaseCommand(ShowDostawy)),
-                new CommandViewModel("Pracownik",new BaseCommand(CreatePracownik)),
                 new CommandViewModel("Pracownicy",new BaseCommand(ShowPracownicy)),
-                new CommandViewModel("Serwis",new BaseCommand(CreateSerwis)),
                 new CommandViewModel("Serwisy",new BaseCommand(ShowSerwisy)),
+                new CommandViewModel("Faktury",new BaseCommand(ShowFaktury)),
+                new CommandViewModel("Naprawy",new BaseCommand(ShowNaprawy)),
             };
         }
         private void open(string name)
@@ -114,123 +114,18 @@ namespace ProjektPDAB.ViewModels
                 case "DostawyAdd":
                     CreateDostawa();
                     break;
+                case "FakturyAdd":
+                    CreateFaktura();
+                    break;
+                case "NaprawyAdd":
+                    CreateNaprawa();
+                    break;
             }
         }
         #endregion
 
         #region Komendy do Buttonow
-        public ICommand WszyscyDostawcyCommand
-        {
-            get
-            {
-                return new BaseCommand(ShowDostawcy);
-            }
-        }
-        public ICommand NowyDostawcaCommand
-        {
-            get
-            {
-                return new BaseCommand(CreateDostawca);
-            }
-        }
-        public ICommand WszystkieSposobyPlatnosciCommand
-        {
-            get
-            {
-                return new BaseCommand(ShowSposobPlatnosci);
-            }
-        }
-        public ICommand SposobPlatnosciDodajCommand
-        {
-            get
-            {
-                return new BaseCommand(CreateSposobPlatnosci);
-            }
-        }
-        public ICommand WszystkieSerwisyCommand
-        {
-            get
-            {
-                return new BaseCommand(ShowSerwisy);
-            }
-        }
-        public ICommand NowySerwisCommand
-        {
-            get
-            {
-                return new BaseCommand(CreateSerwis);
-            }
-        }
-        public ICommand NowyPracownikCommand
-        {
-            get
-            {
-                return new BaseCommand(CreatePracownik);
-            }
-        }
-        public ICommand WszyscyPracownicyCommand
-        {
-            get
-            {
-                return new BaseCommand(ShowPracownicy);
-            }
-        }
-        public ICommand WszyscyKlienciCommand
-        {
-            get
-            {
-                return new BaseCommand(ShowKlienci);
-            }
-        }
-        public ICommand NowyKlientCommand
-        {
-            get
-            {
-                return new BaseCommand(CreateKlient);
-            }
-        }
-        public ICommand WszystkieKategorieCommand
-        {
-            get
-            {
-                return new BaseCommand(ShowKategorie);
-            }
-        }
-        public ICommand NowaKategoriaCommand
-        {
-            get
-            {
-                return new BaseCommand(CreateKategoria);
-            }
-        }
-        public ICommand WszystkieAdresyCommand
-        {
-            get
-            {
-                return new BaseCommand(ShowAdresy);
-            }
-        }
-        public ICommand NowyAdresCommand
-        {
-            get
-            {
-                return new BaseCommand(CreateAdres);
-            }
-        }
-        public ICommand WszystkieDostawyCommand
-        {
-            get
-            {
-                return new BaseCommand(ShowDostawy);
-            }
-        }
-        public ICommand NowaDostawaCommand
-        {
-            get
-            {
-                return new BaseCommand(CreateDostawa);
-            }
-        }
+       
         #endregion
         #region Funkcje wywolujace okna
         private void CreateDostawca()
@@ -296,6 +191,22 @@ namespace ProjektPDAB.ViewModels
         private void CreateDostawa()
         {
             CreateWorkspace<NowaDostawaViewModel>();
+        }
+        private void ShowFaktury()
+        {
+            ShowAllWorkspace<WszystkieFakturyViewModel>();
+        }
+        private void CreateFaktura()
+        {
+            CreateWorkspace<NowaFakturaViewModel>();
+        }
+        private void ShowNaprawy()
+        {
+            ShowAllWorkspace<WszystkieNaprawyViewModel>();
+        }
+        private void CreateNaprawa()
+        {
+            CreateWorkspace<NowaNaprawaViewModel>();
         }
         #endregion
     }

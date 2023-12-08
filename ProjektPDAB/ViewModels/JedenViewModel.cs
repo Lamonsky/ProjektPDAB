@@ -10,7 +10,7 @@ using System.Windows.Input;
 namespace ProjektPDAB.ViewModels
 {
     //
-    public class JedenViewModel<T>:WorkspaceViewModel
+    public class JedenViewModel<T> : WorkspaceViewModel
     {
         #region DB
         //cała BD
@@ -46,7 +46,7 @@ namespace ProjektPDAB.ViewModels
         #region Konstruktor
         public JedenViewModel(string displayName)
         {
-            base.DisplayName = displayName;
+            DisplayName = displayName;
             projektEntities = new ProjektEntities();
         }
         #endregion

@@ -10,7 +10,8 @@ namespace ProjektPDAB.ViewModels
     class NowyKlientViewModel : JedenViewModel<Klienci>
     {
         #region Konstruktor
-        public NowyKlientViewModel() : base("Klienci") {
+        public NowyKlientViewModel() : base("Klienci")
+        {
             item = new Klienci();
         }
         #endregion

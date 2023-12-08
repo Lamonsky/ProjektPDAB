@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ProjektPDAB.ViewModels
 {
-    class WszystkieDostawyViewModel:WszystkieViewModel<DostawyForView>
+    class WszystkieDostawyViewModel : WszystkieViewModel<DostawyForView>
     {
         #region Kontruktor
         public WszystkieDostawyViewModel() : base("Dostawy") { }
@@ -22,10 +22,10 @@ namespace ProjektPDAB.ViewModels
                     from Dostawy in projektEntities.Dostawies
                     select new DostawyForView
                     {
-                        IdDostawy=Dostawy.Iddostawy,
-                        NazwaDostawcy=Dostawy.IddostawcyNavigation.NazwaDostawcy,
-                        DataDostawy=Dostawy.DataDostawy,
-                        StatusDostawy=Dostawy.StatusDostawy
+                        IdDostawy = Dostawy.Iddostawy,
+                        NazwaDostawcy = Dostawy.IddostawcyNavigation.NazwaDostawcy,
+                        DataDostawy = Dostawy.DataDostawy,
+                        StatusDostawy = Dostawy.StatusDostawy
                     }
                 );
         }
