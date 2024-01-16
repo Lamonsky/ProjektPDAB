@@ -19,9 +19,14 @@ public partial class Naprawy
     [Column("IDProduktu")]
     public int? Idproduktu { get; set; }
 
-    public int? DataNaprawy { get; set; }
+    [Column(TypeName = "date")]
+    public DateTime? DataNaprawy { get; set; }
 
-    public int? StatusNaprawy { get; set; }
+    [StringLength(50)]
+    public string? StatusNaprawy { get; set; }
+
+    [StringLength(50)]
+    public string? Opis { get; set; }
 
     [StringLength(50)]
     public string? Uwagi { get; set; }
@@ -46,9 +51,9 @@ public partial class Naprawy
 
     public bool? CzyAktywny { get; set; }
 
-    [ForeignKey("Idnaprawy")]
-    [InverseProperty("Naprawy")]
-    public virtual Produkty IdnaprawyNavigation { get; set; } = null!;
+    [ForeignKey("Idproduktu")]
+    [InverseProperty("Naprawies")]
+    public virtual Produkty? IdproduktuNavigation { get; set; }
 
     [ForeignKey("Idserwisu")]
     [InverseProperty("Naprawies")]

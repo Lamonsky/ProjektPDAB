@@ -18,6 +18,11 @@ public partial class Zamowienium
     [Column(TypeName = "datetime")]
     public DateTime? DataZamowienia { get; set; }
 
+    [Column("IDProduktu")]
+    public int? Idproduktu { get; set; }
+
+    public int? Ilosc { get; set; }
+
     [StringLength(50)]
     public string? Status { get; set; }
 
@@ -48,9 +53,7 @@ public partial class Zamowienium
     [InverseProperty("Zamowienia")]
     public virtual Klienci? IdklientaNavigation { get; set; }
 
-    [InverseProperty("Idpozycji1")]
-    public virtual PozycjeZamowienium? PozycjeZamowienium { get; set; }
-
-    [InverseProperty("IdzamowieniaNavigation")]
-    public virtual ICollection<Wysylki> Wysylkis { get; set; } = new List<Wysylki>();
+    [ForeignKey("Idproduktu")]
+    [InverseProperty("Zamowienia")]
+    public virtual Produkty? IdproduktuNavigation { get; set; }
 }

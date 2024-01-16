@@ -25,6 +25,14 @@ public partial class Produkty
     [Column("IDKategorii")]
     public int? Idkategorii { get; set; }
 
+    public int? IloscNaStanie { get; set; }
+
+    [StringLength(50)]
+    public string? JednostkaMiary { get; set; }
+
+    [StringLength(50)]
+    public string? Producent { get; set; }
+
     [StringLength(50)]
     public string? Uwagi { get; set; }
 
@@ -48,25 +56,19 @@ public partial class Produkty
 
     public bool? CzyAktywny { get; set; }
 
+    [InverseProperty("IdproduktuNavigation")]
+    public virtual ICollection<Dostawy> Dostawies { get; set; } = new List<Dostawy>();
+
     [ForeignKey("Idkategorii")]
     [InverseProperty("Produkties")]
     public virtual Kategorie? IdkategoriiNavigation { get; set; }
 
-    [InverseProperty("IdkoszykaNavigation")]
-    public virtual Koszyk? Koszyk { get; set; }
-
     [InverseProperty("IdproduktuNavigation")]
-    public virtual ICollection<Magazyn> Magazyns { get; set; } = new List<Magazyn>();
-
-    [InverseProperty("IdnaprawyNavigation")]
-    public virtual Naprawy? Naprawy { get; set; }
-
-    [InverseProperty("IdproduktuNavigation")]
-    public virtual ICollection<Opinie> Opinies { get; set; } = new List<Opinie>();
+    public virtual ICollection<Naprawy> Naprawies { get; set; } = new List<Naprawy>();
 
     [InverseProperty("IdproduktuNavigation")]
     public virtual ICollection<PozycjaFaktury> PozycjaFakturies { get; set; } = new List<PozycjaFaktury>();
 
-    [InverseProperty("IdpozycjiNavigation")]
-    public virtual PozycjeZamowienium? PozycjeZamowienium { get; set; }
+    [InverseProperty("IdproduktuNavigation")]
+    public virtual ICollection<Zamowienium> Zamowienia { get; set; } = new List<Zamowienium>();
 }

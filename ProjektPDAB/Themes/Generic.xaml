@@ -16,14 +16,24 @@
                             <Button Content="+" Width="30" Height="30" Command="{Binding AddCommand}"/>
                             <Button Content="-" Width="30" Height="30"/>
                             <Button Content="M" Width="30" Height="30"/>
-                            <Button Content="O" Width="30" Height="30"/>
+                            <Button Content="O" Width="30" Height="30" Command="{Binding RefreshCommand}"/>
                         </ToolBar>
-                        <StackPanel Grid.Row="1" Background="Azure">
-                            <Label>Tu bedzie filtrowanie i sortowanie</Label>
+                        <StackPanel Grid.Row="1" Background="Aqua">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Content="Filtrowanie: "/>
+                                <ComboBox Grid.Column="1" ItemsSource="{Binding GetComboBoxFilterList}"/>
+                                <Label Grid.Column="2" Content="Sortowanie: "/>
+                                <ComboBox Grid.Column="3" ItemsSource="{Binding GetComboBoxSortList}"/>
+                            </Grid>
                         </StackPanel>
                         <ContentPresenter Grid.Row="2" Margin="0,5,0,5"/>
                     </Grid>
-                        
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -39,9 +49,9 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <ToolBar Grid.Row="0" Height="30" Margin="0,2,0,2">
-                            <ToggleButton Content="Zapisz" Command="{Binding SaveCommand}"/>
-                            <ToggleButton Content="Zapisz i zamknij" Command="{Binding SaveAndCloseCommand}"/>
-                            <ToggleButton Content="Anuluj" Command="{Binding CancelCommand}"/>
+                            <Button Content="Zapisz" Command="{Binding SaveCommand}"/>
+                            <Button Content="Zapisz i zamknij" Command="{Binding SaveAndCloseCommand}"/>
+                            <Button Content="Anuluj" Command="{Binding CancelCommand}"/>
                         </ToolBar>
                         <ContentPresenter Grid.Row="1" Margin="0,5,0,5"/>
                     </Grid>

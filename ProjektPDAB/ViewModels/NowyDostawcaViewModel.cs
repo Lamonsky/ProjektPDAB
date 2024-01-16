@@ -53,18 +53,33 @@ namespace ProjektPDAB.ViewModels
                 }
             }
         }
-        public string Kontakt
+        public string NumerTelefonu
         {
             get
             {
-                return item.Kontakt;
+                return item.NumerTelefonu;
             }
             set
             {
-                if (item.Kontakt != value)
+                if (item.NumerTelefonu != value)
                 {
-                    item.Kontakt = value;
-                    OnPropertyChanged(() => Kontakt);
+                    item.NumerTelefonu = value;
+                    OnPropertyChanged(() => NumerTelefonu);
+                }
+            }
+        }
+        public string Email
+        {
+            get
+            {
+                return item.Email;
+            }
+            set
+            {
+                if (item.Email != value)
+                {
+                    item.Email = value;
+                    OnPropertyChanged(() => Email);
                 }
             }
         }

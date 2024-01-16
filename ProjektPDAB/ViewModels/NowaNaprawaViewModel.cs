@@ -17,8 +17,23 @@ namespace ProjektPDAB.ViewModels
         }
         #endregion
         #region Dane
+        public DateTime? KiedyDodal
+        {
+            get
+            {
+                return item.KiedyDodal;
+            }
+            set
+            {
+                if (item.KiedyDodal != value)
+                {
+                    item.KiedyDodal = value;
+                    OnPropertyChanged(() => KiedyDodal);
+                }
+            }
+        }
         public int Idnaprawy { get; }
-        public int? DataNaprawy
+        public DateTime? DataNaprawy
         {
             get
             {
@@ -33,7 +48,7 @@ namespace ProjektPDAB.ViewModels
                 }
             }
         }
-        public int? StatusNaprawy
+        public string? StatusNaprawy
         {
             get
             {
@@ -87,7 +102,7 @@ namespace ProjektPDAB.ViewModels
                     select new KeyAndValue
                     {
                         Key = Serwisy.Idserwisu,
-                        Value = Serwisy.NazwaSerwisu + " " + Serwisy.Adres + " " + Serwisy.Kontakt
+                        Value = Serwisy.NazwaSerwisu + " " + Serwisy.Email + " " + Serwisy.Telefon
                     }
                 ).ToList().AsQueryable();
             }

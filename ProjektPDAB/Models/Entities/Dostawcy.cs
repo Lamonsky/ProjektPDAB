@@ -17,31 +17,46 @@ public partial class Dostawcy
     public string? NazwaDostawcy { get; set; }
 
     [StringLength(50)]
-    public string? Kontakt { get; set; }
+    public string? NumerTelefonu { get; set; }
+
+    [Column("EMail")]
+    [StringLength(50)]
+    public string? Email { get; set; }
+
+    [Column("IDAdresu")]
+    public int? Idadresu { get; set; }
 
     [StringLength(50)]
     public string? Uwagi { get; set; }
 
+    [Column("Kto Dodal")]
     [StringLength(50)]
     public string? KtoDodal { get; set; }
 
-    [Column(TypeName = "datetime")]
+    [Column("Kiedy Dodal", TypeName = "datetime")]
     public DateTime? KiedyDodal { get; set; }
 
+    [Column("Kto Zmodyfikowal")]
     [StringLength(50)]
     public string? KtoZmodyfikowal { get; set; }
 
-    [Column(TypeName = "datetime")]
+    [Column("Kiedy Zmodyfikowal", TypeName = "datetime")]
     public DateTime? KiedyZmodyfikowal { get; set; }
 
+    [Column("Kto Usunal")]
     [StringLength(50)]
     public string? KtoUsunal { get; set; }
 
-    [Column(TypeName = "datetime")]
+    [Column("Kiedy Usunal", TypeName = "datetime")]
     public DateTime? KiedyUsunal { get; set; }
 
+    [Column("Czy aktywny")]
     public bool? CzyAktywny { get; set; }
 
     [InverseProperty("IddostawcyNavigation")]
     public virtual ICollection<Dostawy> Dostawies { get; set; } = new List<Dostawy>();
+
+    [ForeignKey("Idadresu")]
+    [InverseProperty("Dostawcies")]
+    public virtual Adre? IdadresuNavigation { get; set; }
 }

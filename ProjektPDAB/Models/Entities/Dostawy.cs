@@ -22,6 +22,11 @@ public partial class Dostawy
     [StringLength(50)]
     public string? StatusDostawy { get; set; }
 
+    [Column("IDProduktu")]
+    public int? Idproduktu { get; set; }
+
+    public int? Ilosc { get; set; }
+
     [StringLength(50)]
     public string? Uwagi { get; set; }
 
@@ -48,4 +53,8 @@ public partial class Dostawy
     [ForeignKey("Iddostawcy")]
     [InverseProperty("Dostawies")]
     public virtual Dostawcy? IddostawcyNavigation { get; set; }
+
+    [ForeignKey("Idproduktu")]
+    [InverseProperty("Dostawies")]
+    public virtual Produkty? IdproduktuNavigation { get; set; }
 }

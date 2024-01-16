@@ -16,6 +16,21 @@ namespace ProjektPDAB.ViewModels
         }
         #endregion
         #region Dane
+        public DateTime? KiedyDodal
+        {
+            get
+            {
+                return item.KiedyDodal;
+            }
+            set
+            {
+                if (item.KiedyDodal != value)
+                {
+                    item.KiedyDodal = value;
+                    OnPropertyChanged(() => KiedyDodal);
+                }
+            }
+        }
         public int Idfaktury { get; }
         public string? Numer
         {

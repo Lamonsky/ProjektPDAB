@@ -28,17 +28,9 @@ public partial class ProjektEntities : DbContext
 
     public virtual DbSet<Klienci> Kliencis { get; set; }
 
-    public virtual DbSet<Koszyk> Koszyks { get; set; }
-
-    public virtual DbSet<Magazyn> Magazyns { get; set; }
-
     public virtual DbSet<Naprawy> Naprawies { get; set; }
 
-    public virtual DbSet<Opinie> Opinies { get; set; }
-
     public virtual DbSet<PozycjaFaktury> PozycjaFakturies { get; set; }
-
-    public virtual DbSet<PozycjeZamowienium> PozycjeZamowienia { get; set; }
 
     public virtual DbSet<Pracownicy> Pracownicies { get; set; }
 
@@ -50,7 +42,7 @@ public partial class ProjektEntities : DbContext
 
     public virtual DbSet<Transakcje> Transakcjes { get; set; }
 
-    public virtual DbSet<Wysylki> Wysylkis { get; set; }
+    public virtual DbSet<TypFaktury> TypFakturies { get; set; }
 
     public virtual DbSet<Zamowienium> Zamowienia { get; set; }
 
@@ -60,9 +52,16 @@ public partial class ProjektEntities : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Dostawcy>(entity =>
+        {
+            entity.HasOne(d => d.IdadresuNavigation).WithMany(p => p.Dostawcies).HasConstraintName("FK_Dostawcy_Adres");
+        });
+
         modelBuilder.Entity<Dostawy>(entity =>
         {
             entity.HasOne(d => d.IddostawcyNavigation).WithMany(p => p.Dostawies).HasConstraintName("FK_Dostawy_Dostawcy");
+
+            entity.HasOne(d => d.IdproduktuNavigation).WithMany(p => p.Dostawies).HasConstraintName("FK_Dostawy_Produkty");
         });
 
         modelBuilder.Entity<Faktura>(entity =>
@@ -70,40 +69,20 @@ public partial class ProjektEntities : DbContext
             entity.HasOne(d => d.IdklientaNavigation).WithMany(p => p.Fakturas).HasConstraintName("FK_Faktura_Klienci");
 
             entity.HasOne(d => d.IdsposobuPlatnosciNavigation).WithMany(p => p.Fakturas).HasConstraintName("FK_Faktura_SposobPlatnosci");
+
+            entity.HasOne(d => d.IdtypuFakturyNavigation).WithMany(p => p.Fakturas).HasConstraintName("FK_Faktura_TypFaktury");
         });
 
-        modelBuilder.Entity<Koszyk>(entity =>
+        modelBuilder.Entity<Klienci>(entity =>
         {
-            entity.Property(e => e.Idkoszyka).ValueGeneratedOnAdd();
-
-            entity.HasOne(d => d.IdklientaNavigation).WithMany(p => p.Koszyks).HasConstraintName("FK_Koszyk_Klienci");
-
-            entity.HasOne(d => d.IdkoszykaNavigation).WithOne(p => p.Koszyk)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Koszyk_Produkty");
-        });
-
-        modelBuilder.Entity<Magazyn>(entity =>
-        {
-            entity.HasOne(d => d.IdproduktuNavigation).WithMany(p => p.Magazyns).HasConstraintName("FK_Magazyn_Produkty");
+            entity.HasOne(d => d.IdadresuNavigation).WithMany(p => p.Kliencis).HasConstraintName("FK_Klienci_Adres");
         });
 
         modelBuilder.Entity<Naprawy>(entity =>
         {
-            entity.Property(e => e.Idnaprawy).ValueGeneratedOnAdd();
-
-            entity.HasOne(d => d.IdnaprawyNavigation).WithOne(p => p.Naprawy)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Naprawy_Produkty");
+            entity.HasOne(d => d.IdproduktuNavigation).WithMany(p => p.Naprawies).HasConstraintName("FK_Naprawy_Produkty");
 
             entity.HasOne(d => d.IdserwisuNavigation).WithMany(p => p.Naprawies).HasConstraintName("FK_Naprawy_Serwisy");
-        });
-
-        modelBuilder.Entity<Opinie>(entity =>
-        {
-            entity.HasOne(d => d.IdklientaNavigation).WithMany(p => p.Opinies).HasConstraintName("FK_Opinie_Klienci");
-
-            entity.HasOne(d => d.IdproduktuNavigation).WithMany(p => p.Opinies).HasConstraintName("FK_Opinie_Produkty");
         });
 
         modelBuilder.Entity<PozycjaFaktury>(entity =>
@@ -113,17 +92,9 @@ public partial class ProjektEntities : DbContext
             entity.HasOne(d => d.IdproduktuNavigation).WithMany(p => p.PozycjaFakturies).HasConstraintName("FK_PozycjaFaktury_Produkty");
         });
 
-        modelBuilder.Entity<PozycjeZamowienium>(entity =>
+        modelBuilder.Entity<Pracownicy>(entity =>
         {
-            entity.Property(e => e.Idpozycji).ValueGeneratedOnAdd();
-
-            entity.HasOne(d => d.IdpozycjiNavigation).WithOne(p => p.PozycjeZamowienium)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_PozycjeZamowienia_Produkty");
-
-            entity.HasOne(d => d.Idpozycji1).WithOne(p => p.PozycjeZamowienium)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_PozycjeZamowienia_Zamowienia");
+            entity.HasOne(d => d.IdadresuNavigation).WithMany(p => p.Pracownicies).HasConstraintName("FK_Pracownicy_Adres");
         });
 
         modelBuilder.Entity<Produkty>(entity =>
@@ -131,19 +102,28 @@ public partial class ProjektEntities : DbContext
             entity.HasOne(d => d.IdkategoriiNavigation).WithMany(p => p.Produkties).HasConstraintName("FK_Produkty_Kategorie");
         });
 
+        modelBuilder.Entity<Serwisy>(entity =>
+        {
+            entity.HasOne(d => d.IdadresNavigation).WithMany(p => p.Serwisies).HasConstraintName("FK_Serwisy_Adres");
+        });
+
         modelBuilder.Entity<Transakcje>(entity =>
         {
             entity.HasOne(d => d.IdklientaNavigation).WithMany(p => p.Transakcjes).HasConstraintName("FK_Transakcje_Klienci");
+
+            entity.HasOne(d => d.IdsposobuPlatnosciNavigation).WithMany(p => p.Transakcjes).HasConstraintName("FK_Transakcje_SposobPlatnosci");
         });
 
-        modelBuilder.Entity<Wysylki>(entity =>
+        modelBuilder.Entity<TypFaktury>(entity =>
         {
-            entity.HasOne(d => d.IdzamowieniaNavigation).WithMany(p => p.Wysylkis).HasConstraintName("FK_Wysylki_Zamowienia");
+            entity.Property(e => e.IdtypuFaktury).ValueGeneratedNever();
         });
 
         modelBuilder.Entity<Zamowienium>(entity =>
         {
             entity.HasOne(d => d.IdklientaNavigation).WithMany(p => p.Zamowienia).HasConstraintName("FK_Zamowienia_Klienci");
+
+            entity.HasOne(d => d.IdproduktuNavigation).WithMany(p => p.Zamowienia).HasConstraintName("FK_Zamowienia_Produkty");
         });
 
         OnModelCreatingPartial(modelBuilder);

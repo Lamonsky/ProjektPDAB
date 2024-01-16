@@ -10,8 +10,8 @@ namespace ProjektPDAB.Models.EntitiesForView
     {
         #region Dane
         public int Idnaprawy { get; set; }
-        public int? DataNaprawy { get; set; }
-        public int? StatusNaprawy { get; set; }
+        public DateTime? DataNaprawy { get; set; }
+        public string? StatusNaprawy { get; set; }
         //Zamiast IDSerwisu
         public string? NazwaSerwisu { get; set; }
         public string? Kontakt { get; set; }

@@ -66,9 +66,6 @@
         <vw:NowaNaprawaView/>
     </DataTemplate>
 
-
-
-
     <Style TargetType="{x:Type MenuItem}">
         <Setter Property="Width" Value="auto"/>
         <Setter Property="Margin" Value="2,5,2,5"/>
@@ -92,6 +89,7 @@
             </Setter.Value>
         </Setter>
         <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Template">
             <Setter.Value>
                 <!-- 

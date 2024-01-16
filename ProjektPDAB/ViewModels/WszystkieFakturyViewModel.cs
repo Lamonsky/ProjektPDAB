@@ -29,10 +29,26 @@ namespace ProjektPDAB.ViewModels
                         Nazwisko = Faktura.IdklientaNavigation.Nazwisko,
                         Email = Faktura.IdklientaNavigation.Email,
                         Telefon = Faktura.IdklientaNavigation.Telefon,
-                        Adres = Faktura.IdklientaNavigation.Adres,
+                        Adres = Faktura.IdklientaNavigation.IdadresuNavigation.Ulica,
                         Nazwa = Faktura.IdsposobuPlatnosciNavigation.Nazwa
                     }
                 );
+        }
+        public override List<string> GetComboBoxSortList()
+        {
+            throw new NotImplementedException();
+        }
+        public override List<string> GetComboBoxFilterList()
+        {
+            throw new NotImplementedException();
+        }
+        public override void Filter()
+        {
+            throw new NotImplementedException();
+        }
+        public override void Sort()
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }

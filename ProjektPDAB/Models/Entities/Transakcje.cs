@@ -22,8 +22,11 @@ public partial class Transakcje
     [Column(TypeName = "decimal(18, 0)")]
     public decimal? Kwota { get; set; }
 
-    [StringLength(50)]
-    public string? MetodaPlatnosci { get; set; }
+    [Column("IDSposobuPlatnosci")]
+    public int? IdsposobuPlatnosci { get; set; }
+
+    [Column("IDZamowienia")]
+    public int? Idzamowienia { get; set; }
 
     [StringLength(50)]
     public string? Uwagi { get; set; }
@@ -51,4 +54,8 @@ public partial class Transakcje
     [ForeignKey("Idklienta")]
     [InverseProperty("Transakcjes")]
     public virtual Klienci? IdklientaNavigation { get; set; }
+
+    [ForeignKey("IdsposobuPlatnosci")]
+    [InverseProperty("Transakcjes")]
+    public virtual SposobPlatnosci? IdsposobuPlatnosciNavigation { get; set; }
 }

@@ -29,12 +29,29 @@ namespace ProjektPDAB.ViewModels
                         DataNaprawy=Naprawy.DataNaprawy,
                         StatusNaprawy=Naprawy.StatusNaprawy,
                         NazwaSerwisu=Naprawy.IdserwisuNavigation.NazwaSerwisu,
-                        Kontakt=Naprawy.IdserwisuNavigation.Kontakt,
-                        Adres=Naprawy.IdserwisuNavigation.Adres,
-                        Nazwa=Naprawy.IdnaprawyNavigation.Nazwa,
-                        NazwaKategorii=Naprawy.IdnaprawyNavigation.IdkategoriiNavigation.NazwaKategorii
+                        Kontakt=Naprawy.IdserwisuNavigation.Telefon,
+                        Adres=Naprawy.IdserwisuNavigation.Telefon + "\\" + Naprawy.IdserwisuNavigation.Email,
+                        Nazwa=Naprawy.IdproduktuNavigation.Nazwa,
+                        NazwaKategorii=Naprawy.IdproduktuNavigation.IdkategoriiNavigation.NazwaKategorii
                     }
                 );
+        }
+
+        public override List<string> GetComboBoxSortList()
+        {
+            throw new NotImplementedException();
+        }
+        public override List<string> GetComboBoxFilterList()
+        {
+            throw new NotImplementedException();
+        }
+        public override void Filter()
+        {
+            throw new NotImplementedException();
+        }
+        public override void Sort()
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }

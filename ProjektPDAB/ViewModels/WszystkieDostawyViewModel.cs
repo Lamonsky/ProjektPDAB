@@ -29,6 +29,22 @@ namespace ProjektPDAB.ViewModels
                     }
                 );
         }
+        public override List<string> GetComboBoxSortList()
+        {
+            throw new NotImplementedException();
+        }
+        public override List<string> GetComboBoxFilterList()
+        {
+            throw new NotImplementedException();
+        }
+        public override void Filter()
+        {
+            throw new NotImplementedException();
+        }
+        public override void Sort()
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }

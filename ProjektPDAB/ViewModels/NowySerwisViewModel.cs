@@ -1,4 +1,5 @@
-﻿using ProjektPDAB.Models.Entities;
+﻿using Microsoft.Extensions.Primitives;
+using ProjektPDAB.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +32,7 @@ namespace ProjektPDAB.ViewModels
                 }
             }
         }
-        public int ID
+        public int Idserwisu
         {
             get
             {
@@ -53,36 +54,52 @@ namespace ProjektPDAB.ViewModels
                 }
             }
         }
-        public string Kontakt
+        public string Telefon
         {
             get
             {
-                return item.Kontakt;
+                return item.Telefon;
             }
             set
             {
-                if (item.Kontakt != value)
+                if (item.Telefon != value)
                 {
-                    item.Kontakt = value;
-                    OnPropertyChanged(() => Kontakt);
+                    item.Telefon = value;
+                    OnPropertyChanged(() => Telefon);
                 }
             }
         }
-        public string Adres
+        public string EMail
         {
             get
             {
-                return item.Adres;
+                return item.Email;
             }
             set
             {
-                if (item.Adres != value)
+                if (item.Email != value)
                 {
-                    item.Adres = value;
-                    OnPropertyChanged(() => Adres);
+                    item.Email = value;
+                    OnPropertyChanged(() => EMail);
                 }
             }
         }
+        public int? Idadres
+        {
+            get
+            {
+                return item.Idadres;
+            }
+            set
+            {
+                if (item.Idadres != value)
+                {
+                    item.Idadres = value;
+                    OnPropertyChanged(() => Idadres);
+                }
+            }
+        }
+
         #endregion
     }
 }

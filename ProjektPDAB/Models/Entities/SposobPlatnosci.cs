@@ -41,4 +41,7 @@ public partial class SposobPlatnosci
 
     [InverseProperty("IdsposobuPlatnosciNavigation")]
     public virtual ICollection<Faktura> Fakturas { get; set; } = new List<Faktura>();
+
+    [InverseProperty("IdsposobuPlatnosciNavigation")]
+    public virtual ICollection<Transakcje> Transakcjes { get; set; } = new List<Transakcje>();
 }

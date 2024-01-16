@@ -31,7 +31,7 @@ namespace ProjektPDAB.ViewModels
                 }
             }
         }
-        public int ID
+        public int Idpracownika
         {
             get
             {

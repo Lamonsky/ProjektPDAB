@@ -10,7 +10,6 @@ namespace ProjektPDAB.Models.Entities;
 public partial class Pracownicy
 {
     [Key]
-    [Column("IDPracownika")]
     public int Idpracownika { get; set; }
 
     [StringLength(50)]
@@ -24,6 +23,19 @@ public partial class Pracownicy
 
     [Column(TypeName = "datetime")]
     public DateTime? DataZatrudnienia { get; set; }
+
+    [Column("IDAdresu")]
+    public int? Idadresu { get; set; }
+
+    [StringLength(50)]
+    public string? Telefon { get; set; }
+
+    [Column("EMail")]
+    [StringLength(50)]
+    public string? Email { get; set; }
+
+    [Column(TypeName = "decimal(18, 0)")]
+    public decimal? Pensja { get; set; }
 
     [StringLength(50)]
     public string? Uwagi { get; set; }
@@ -47,4 +59,8 @@ public partial class Pracownicy
     public DateTime? KiedyUsunal { get; set; }
 
     public bool? CzyAktywny { get; set; }
+
+    [ForeignKey("Idadresu")]
+    [InverseProperty("Pracownicies")]
+    public virtual Adre? IdadresuNavigation { get; set; }
 }

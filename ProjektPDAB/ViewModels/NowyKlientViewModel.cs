@@ -98,18 +98,18 @@ namespace ProjektPDAB.ViewModels
                 }
             }
         }
-        public string Adres
+        public int? Idadresu
         {
             get
             {
-                return item.Adres;
+                return item.Idadresu;
             }
             set
             {
-                if (item.Adres != value)
+                if (item.Idadresu != value)
                 {
-                    item.Adres = value;
-                    OnPropertyChanged(() => Adres);
+                    item.Idadresu = value;
+                    OnPropertyChanged(() => Idadresu);
                 }
             }
         }

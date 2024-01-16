@@ -27,6 +27,12 @@ public partial class Adre
     public string? KodPocztowy { get; set; }
 
     [StringLength(50)]
+    public string? Wojewodztwo { get; set; }
+
+    [StringLength(50)]
+    public string? Kraj { get; set; }
+
+    [StringLength(50)]
     public string? Opis { get; set; }
 
     [StringLength(50)]
@@ -55,4 +61,16 @@ public partial class Adre
 
     [Column("Czy aktywny")]
     public bool? CzyAktywny { get; set; }
+
+    [InverseProperty("IdadresuNavigation")]
+    public virtual ICollection<Dostawcy> Dostawcies { get; set; } = new List<Dostawcy>();
+
+    [InverseProperty("IdadresuNavigation")]
+    public virtual ICollection<Klienci> Kliencis { get; set; } = new List<Klienci>();
+
+    [InverseProperty("IdadresuNavigation")]
+    public virtual ICollection<Pracownicy> Pracownicies { get; set; } = new List<Pracownicy>();
+
+    [InverseProperty("IdadresNavigation")]
+    public virtual ICollection<Serwisy> Serwisies { get; set; } = new List<Serwisy>();
 }

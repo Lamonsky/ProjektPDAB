@@ -17,6 +17,21 @@ namespace ProjektPDAB.ViewModels
         }
         #endregion
         #region Dane
+        public DateTime? KiedyDodal
+        {
+            get
+            {
+                return item.KiedyDodal;
+            }
+            set
+            {
+                if (item.KiedyDodal != value)
+                {
+                    item.KiedyDodal = value;
+                    OnPropertyChanged(() => KiedyDodal);
+                }
+            }
+        }
         public int IdDostawy { get; }
         public DateTime? DataDostawy
         {
@@ -82,7 +97,46 @@ namespace ProjektPDAB.ViewModels
                     select new KeyAndValue
                     {
                         Key = Dostawcy.Iddostawcy,
-                        Value = Dostawcy.NazwaDostawcy + " " + Dostawcy.Kontakt
+                        Value = Dostawcy.NazwaDostawcy + " " + Dostawcy.NumerTelefonu + "\\" + Dostawcy.Email
+                    }
+                ).ToList().AsQueryable();
+            }
+        }
+        public int? Idproduktu
+        {
+            get
+            {
+                return item.Idproduktu;
+            }
+            set
+            {
+                if (item.Idproduktu != value)
+                {
+                    item.Idproduktu = value;
+                    OnPropertyChanged(() => Idproduktu);
+                }
+            }
+        }
+        public IQueryable<Produkty> ProduktyComboBoxItemsOneArgument
+        {
+            get
+            {
+                return (
+                    from Nazwa in projektEntities.Produkties
+                    select Nazwa
+                ).ToList().AsQueryable();
+            }
+        }
+        public IQueryable<KeyAndValue> ProduktyComboBoxItemsMultipleArguments
+        {
+            get
+            {
+                return (
+                    from Produkty in projektEntities.Produkties
+                    select new KeyAndValue
+                    {
+                        Key = Produkty.Idproduktu,
+                        Value = Produkty.Nazwa + " " + Produkty.Cena
                     }
                 ).ToList().AsQueryable();
             }

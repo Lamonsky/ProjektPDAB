@@ -105,6 +105,10 @@ namespace ProjektPDAB.ViewModels
                 new CommandViewModel("Serwisy",new BaseCommand(ShowSerwisy)),
                 new CommandViewModel("Faktury",new BaseCommand(ShowFaktury)),
                 new CommandViewModel("Naprawy",new BaseCommand(ShowNaprawy)),
+                new CommandViewModel("Dostawcy",new BaseCommand(ShowDostawcy)),
+                new CommandViewModel("Klienci",new BaseCommand(ShowKlienci)),
+                new CommandViewModel("Kategorie",new BaseCommand(ShowKategorie)),
+
             };
         }
         private void open(string name)
@@ -119,6 +123,21 @@ namespace ProjektPDAB.ViewModels
                     break;
                 case "NaprawyAdd":
                     CreateNaprawa();
+                    break;
+                case "SerwisyAdd":
+                    CreateSerwis();
+                    break;
+                case "PracownicyAdd":
+                    CreatePracownik();
+                    break;
+                case "DostawcyAdd":
+                    CreateDostawca();
+                    break;
+                case "KlienciAdd":
+                    CreateKlient();
+                    break;
+                case "KategorieAdd":
+                    CreateKategoria();
                     break;
             }
         }

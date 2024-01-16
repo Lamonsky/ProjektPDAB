@@ -16,11 +16,15 @@ public partial class Serwisy
     [StringLength(50)]
     public string? NazwaSerwisu { get; set; }
 
-    [StringLength(50)]
-    public string? Kontakt { get; set; }
+    [Column("IDAdres")]
+    public int? Idadres { get; set; }
 
     [StringLength(50)]
-    public string? Adres { get; set; }
+    public string? Telefon { get; set; }
+
+    [Column("EMail")]
+    [StringLength(50)]
+    public string? Email { get; set; }
 
     [StringLength(50)]
     public string? Uwagi { get; set; }
@@ -44,6 +48,10 @@ public partial class Serwisy
     public DateTime? KiedyUsunal { get; set; }
 
     public bool? CzyAktywny { get; set; }
+
+    [ForeignKey("Idadres")]
+    [InverseProperty("Serwisies")]
+    public virtual Adre? IdadresNavigation { get; set; }
 
     [InverseProperty("IdserwisuNavigation")]
     public virtual ICollection<Naprawy> Naprawies { get; set; } = new List<Naprawy>();

@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Models\Context\" />
     <Folder Include="Models\Entities\" />
   </ItemGroup>
 

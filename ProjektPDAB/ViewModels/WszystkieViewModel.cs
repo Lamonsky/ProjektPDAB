@@ -43,6 +43,18 @@ namespace ProjektPDAB.ViewModels
                 return _AddCommand;
             }
         }
+        private BaseCommand _RefreshCommand;
+        public ICommand RefreshCommand
+        {
+            get
+            {
+                if(_RefreshCommand == null)
+                {
+                    _RefreshCommand = new BaseCommand(() => load());
+                }
+                return _RefreshCommand;
+            }
+        }
         #endregion
         #region Kolekcja
         //tu ....
@@ -61,7 +73,7 @@ namespace ProjektPDAB.ViewModels
             set
             {
                 _List = value;
-                OnPropertyChanged(() => List);
+                OnPropertyChanged(() => List);  
             }
         }
         #endregion
@@ -80,6 +92,18 @@ namespace ProjektPDAB.ViewModels
         {
             Messenger.Default.Send(DisplayName + "Add");
         }
+        #endregion
+
+        #region Sortowanie
+        public abstract void Sort();
+        public abstract List<string> GetComboBoxSortList();
+
+        public abstract void Filter();
+        public abstract List<string> GetComboBoxFilterList();
+        public List<string> SortComboBoxListItems;
+        public List<string> FilterComboBoxListItems;
+        public string FindTextBox;
+        public string SortField;
         #endregion
     }
 }

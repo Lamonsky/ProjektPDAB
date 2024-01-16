@@ -28,6 +28,9 @@ public partial class Faktura
     [Column("IDSposobuPlatnosci")]
     public int? IdsposobuPlatnosci { get; set; }
 
+    [Column("IDTypuFaktury")]
+    public int? IdtypuFaktury { get; set; }
+
     [StringLength(50)]
     public string? Uwagi { get; set; }
 
@@ -58,6 +61,10 @@ public partial class Faktura
     [ForeignKey("IdsposobuPlatnosci")]
     [InverseProperty("Fakturas")]
     public virtual SposobPlatnosci? IdsposobuPlatnosciNavigation { get; set; }
+
+    [ForeignKey("IdtypuFaktury")]
+    [InverseProperty("Fakturas")]
+    public virtual TypFaktury? IdtypuFakturyNavigation { get; set; }
 
     [InverseProperty("IdfakturyNavigation")]
     public virtual ICollection<PozycjaFaktury> PozycjaFakturies { get; set; } = new List<PozycjaFaktury>();
