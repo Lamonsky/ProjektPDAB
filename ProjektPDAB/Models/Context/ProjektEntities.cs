@@ -16,8 +16,6 @@ public partial class ProjektEntities : DbContext
     {
     }
 
-    public virtual DbSet<Adre> Adres { get; set; }
-
     public virtual DbSet<Dostawcy> Dostawcies { get; set; }
 
     public virtual DbSet<Dostawy> Dostawies { get; set; }
@@ -47,16 +45,11 @@ public partial class ProjektEntities : DbContext
     public virtual DbSet<Zamowienium> Zamowienia { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Server=localhost;TrustServerCertificate=True;Integrated Security=True;Database=ProjektPDAB");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Dostawcy>(entity =>
-        {
-            entity.HasOne(d => d.IdadresuNavigation).WithMany(p => p.Dostawcies).HasConstraintName("FK_Dostawcy_Adres");
-        });
-
         modelBuilder.Entity<Dostawy>(entity =>
         {
             entity.HasOne(d => d.IddostawcyNavigation).WithMany(p => p.Dostawies).HasConstraintName("FK_Dostawy_Dostawcy");
@@ -73,11 +66,6 @@ public partial class ProjektEntities : DbContext
             entity.HasOne(d => d.IdtypuFakturyNavigation).WithMany(p => p.Fakturas).HasConstraintName("FK_Faktura_TypFaktury");
         });
 
-        modelBuilder.Entity<Klienci>(entity =>
-        {
-            entity.HasOne(d => d.IdadresuNavigation).WithMany(p => p.Kliencis).HasConstraintName("FK_Klienci_Adres");
-        });
-
         modelBuilder.Entity<Naprawy>(entity =>
         {
             entity.HasOne(d => d.IdproduktuNavigation).WithMany(p => p.Naprawies).HasConstraintName("FK_Naprawy_Produkty");
@@ -92,19 +80,9 @@ public partial class ProjektEntities : DbContext
             entity.HasOne(d => d.IdproduktuNavigation).WithMany(p => p.PozycjaFakturies).HasConstraintName("FK_PozycjaFaktury_Produkty");
         });
 
-        modelBuilder.Entity<Pracownicy>(entity =>
-        {
-            entity.HasOne(d => d.IdadresuNavigation).WithMany(p => p.Pracownicies).HasConstraintName("FK_Pracownicy_Adres");
-        });
-
         modelBuilder.Entity<Produkty>(entity =>
         {
             entity.HasOne(d => d.IdkategoriiNavigation).WithMany(p => p.Produkties).HasConstraintName("FK_Produkty_Kategorie");
-        });
-
-        modelBuilder.Entity<Serwisy>(entity =>
-        {
-            entity.HasOne(d => d.IdadresNavigation).WithMany(p => p.Serwisies).HasConstraintName("FK_Serwisy_Adres");
         });
 
         modelBuilder.Entity<Transakcje>(entity =>
@@ -112,11 +90,8 @@ public partial class ProjektEntities : DbContext
             entity.HasOne(d => d.IdklientaNavigation).WithMany(p => p.Transakcjes).HasConstraintName("FK_Transakcje_Klienci");
 
             entity.HasOne(d => d.IdsposobuPlatnosciNavigation).WithMany(p => p.Transakcjes).HasConstraintName("FK_Transakcje_SposobPlatnosci");
-        });
 
-        modelBuilder.Entity<TypFaktury>(entity =>
-        {
-            entity.Property(e => e.IdtypuFaktury).ValueGeneratedNever();
+            entity.HasOne(d => d.IdzamowieniaNavigation).WithMany(p => p.Transakcjes).HasConstraintName("FK_Transakcje_Zamowienia");
         });
 
         modelBuilder.Entity<Zamowienium>(entity =>

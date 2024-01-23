@@ -30,6 +30,8 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*"/>
@@ -42,7 +44,11 @@
                 <Label Content="Data Dostawy:" Grid.Row="1" Grid.Column="1"/>
                 <DatePicker Grid.Row="1" Grid.Column="2" SelectedDate="{Binding Path=DataDostawy, UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Content="Status dostawy:" Grid.Row="2" Grid.Column="1"/>
-                <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=StatusDostawy, UpdateSourceTrigger=PropertyChanged}"/>
+                <ComboBox Grid.Row="2" Grid.Column="2" ItemsSource="{Binding Path=StatusDostawyComboBox}" Text="{Binding Path=StatusDostawy, UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Content="Produkt:" Grid.Row="3" Grid.Column="1"/>
+                <ComboBox Grid.Row="3" Grid.Column="2" ItemsSource="{Binding ProduktyComboBoxItemsMultipleArguments}" DisplayMemberPath="Value" SelectedValuePath="Key" SelectedValue="{Binding Path=Idproduktu,Mode=TwoWay}"/>
+                <Label Content="Ilość:" Grid.Row="4" Grid.Column="1"/>
+                <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding Path=Ilosc, UpdateSourceTrigger=PropertyChanged}"/>
             </Grid>
         </Expander>
     </Grid>

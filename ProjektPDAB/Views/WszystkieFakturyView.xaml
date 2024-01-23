@@ -18,7 +18,8 @@
                 <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
                 <DataGridTextColumn Header="Telefon" Binding="{Binding Telefon}"/>
                 <DataGridTextColumn Header="Adres" Binding="{Binding Adres}"/>
-                <DataGridTextColumn Header="Nazwa" Binding="{Binding Nazwa}"/>
+                <DataGridTextColumn Header="Sposób Płatności" Binding="{Binding NazwaSposobuPlatnosci}"/>
+                <DataGridTextColumn Header="Typ Faktury" Binding="{Binding TypFaktury}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

@@ -1,12 +1,14 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
 using ProjektPDAB.Helpers;
 using ProjektPDAB.Models.Context;
+using ProjektPDAB.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace ProjektPDAB.ViewModels
@@ -43,6 +45,18 @@ namespace ProjektPDAB.ViewModels
                 return _AddCommand;
             }
         }
+        private BaseCommand _ModifyCommand;
+        public ICommand ModifyCommand
+        {
+            get
+            {
+                if (_ModifyCommand == null)
+                {
+                    _ModifyCommand = new BaseCommand(() => modify());
+                }
+                return _ModifyCommand;
+            }
+        }
         private BaseCommand _RefreshCommand;
         public ICommand RefreshCommand
         {
@@ -53,6 +67,30 @@ namespace ProjektPDAB.ViewModels
                     _RefreshCommand = new BaseCommand(() => load());
                 }
                 return _RefreshCommand;
+            }
+        }
+        private BaseCommand _SortCommand;
+        public ICommand SortCommand
+        {
+            get
+            {
+                if (_SortCommand == null)
+                {
+                    _SortCommand = new BaseCommand(() => Sort());
+                }
+                return _SortCommand;
+            }
+        }
+        private BaseCommand _FilterCommand;
+        public ICommand FilterCommand
+        {
+            get
+            {
+                if (_FilterCommand == null)
+                {
+                    _FilterCommand = new BaseCommand(() => Filter());
+                }
+                return _FilterCommand;
             }
         }
         #endregion
@@ -92,6 +130,10 @@ namespace ProjektPDAB.ViewModels
         {
             Messenger.Default.Send(DisplayName + "Add");
         }
+        private void modify()
+        {
+            
+        }
         #endregion
 
         #region Sortowanie
@@ -100,10 +142,23 @@ namespace ProjektPDAB.ViewModels
 
         public abstract void Filter();
         public abstract List<string> GetComboBoxFilterList();
-        public List<string> SortComboBoxListItems;
-        public List<string> FilterComboBoxListItems;
-        public string FindTextBox;
-        public string SortField;
+        public List<string> SortComboBoxListItems
+        {
+            get
+            {
+                return GetComboBoxSortList();
+            }
+        }
+        public List<string> FilterComboBoxListItems
+        {
+            get
+            {
+                return GetComboBoxFilterList();
+            }
+        }
+        public string FindTextBox { get; set; }
+        public string SortField { get; set; }
+        public string FilterField { get; set; }
         #endregion
     }
 }

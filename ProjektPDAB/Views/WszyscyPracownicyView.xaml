@@ -12,8 +12,13 @@
                 <DataGridTextColumn Header="ID" Binding="{Binding Idpracownika}"/>
                 <DataGridTextColumn Header="Imię" Binding="{Binding Imie}"/>
                 <DataGridTextColumn Header="Nazwisko" Binding="{Binding Nazwisko}"/>
-                <DataGridTextColumn Header="Stanowisko" Binding="{Binding Stanowisko}"/>
+                <DataGridTextColumn Header="Telefon" Binding="{Binding Telefon}"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+                <DataGridTextColumn Header="Adres" Binding="{Binding Ulica}"/>
+                <DataGridTextColumn Header="Wojewodztwo" Binding="{Binding Wojewodztwo}"/>
+                <DataGridTextColumn Header="Kraj" Binding="{Binding Kraj}"/>
                 <DataGridTextColumn Header="Data Zatrudnienia" Binding="{Binding DataZatrudnienia}"/>
+                <DataGridTextColumn Header="Pensja" Binding="{Binding Pensja}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

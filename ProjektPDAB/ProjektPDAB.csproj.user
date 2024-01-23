@@ -16,9 +16,6 @@
     <Compile Update="Views\NowaNaprawaView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\NowyAdresView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Views\NowyDostawcaView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -34,9 +31,6 @@
     <Compile Update="Views\MainWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\NowaKategoriaView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Views\NowyKlientView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -46,28 +40,16 @@
     <Compile Update="Views\NowySerwisView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\NowySposobPlatnosciView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Views\WszyscyKlienciView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\WszyscyPracownicyView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\WszystkieAdresyView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Views\WszystkieDostawyView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\WszystkieKategorieView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Views\WszystkieSerwisyView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\WszystkieSposobyPlatnosciView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -82,9 +64,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\NowaNaprawaView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\NowyAdresView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\NowyDostawcaView.xaml">
@@ -102,9 +81,6 @@
     <Page Update="Views\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\NowaKategoriaView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Views\NowyKlientView.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -117,28 +93,16 @@
     <Page Update="Views\Resources\ViewResources.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\NowySposobPlatnosciView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Views\WszyscyKlienciView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\WszyscyPracownicyView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\WszystkieAdresyView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Views\WszystkieDostawyView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\WszystkieKategorieView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Views\WszystkieSerwisyView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\WszystkieSposobyPlatnosciView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -14,7 +14,10 @@
                 <DataGridTextColumn Header="Nazwisko" Binding="{Binding Nazwisko}"/>
                 <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
                 <DataGridTextColumn Header="Telefon" Binding="{Binding Telefon}"/>
-                <DataGridTextColumn Header="Adres" Binding="{Binding Adres}"/>
+                <DataGridTextColumn Header="Adres" Binding="{Binding Ulica}"/>
+                <DataGridTextColumn Header="Województwo" Binding="{Binding Wojewodztwo}"/>
+                <DataGridTextColumn Header="Kraj" Binding="{Binding Kraj}"/>
+                <DataGridTextColumn Header="NIP/Pesel" Binding="{Binding NipPesel}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

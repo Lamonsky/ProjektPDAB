@@ -24,8 +24,26 @@ public partial class Pracownicy
     [Column(TypeName = "datetime")]
     public DateTime? DataZatrudnienia { get; set; }
 
-    [Column("IDAdresu")]
-    public int? Idadresu { get; set; }
+    [StringLength(50)]
+    public string? Miejscowosc { get; set; }
+
+    [StringLength(50)]
+    public string? Ulica { get; set; }
+
+    [StringLength(50)]
+    public string? NrDomu { get; set; }
+
+    [StringLength(50)]
+    public string? NrLokalu { get; set; }
+
+    [StringLength(50)]
+    public string? KodPocztowy { get; set; }
+
+    [StringLength(50)]
+    public string? Wojewodztwo { get; set; }
+
+    [StringLength(50)]
+    public string? Kraj { get; set; }
 
     [StringLength(50)]
     public string? Telefon { get; set; }
@@ -59,8 +77,4 @@ public partial class Pracownicy
     public DateTime? KiedyUsunal { get; set; }
 
     public bool? CzyAktywny { get; set; }
-
-    [ForeignKey("Idadresu")]
-    [InverseProperty("Pracownicies")]
-    public virtual Adre? IdadresuNavigation { get; set; }
 }

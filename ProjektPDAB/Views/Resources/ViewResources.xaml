@@ -11,12 +11,6 @@
     <DataTemplate DataType="{x:Type vm:NowyDostawcaViewModel}">
         <vw:NowyDostawcaView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieSposobyPlatnosciViewModel}">
-        <vw:WszystkieSposobyPlatnosciView/>
-    </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:NowySposobPlatnosciViewModel}">
-        <vw:NowySposobPlatnosciView/>
-    </DataTemplate>
     <DataTemplate DataType="{x:Type vm:WszystkieSerwisyViewModel}">
         <vw:WszystkieSerwisyView/>
     </DataTemplate>
@@ -34,18 +28,6 @@
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:NowyKlientViewModel}">
         <vw:NowyKlientView/>
-    </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieKategorieViewModel}">
-        <vw:WszystkieKategorieView/>
-    </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:NowaKategoriaViewModel}">
-        <vw:NowaKategoriaView/>
-    </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieAdresyViewModel}">
-        <vw:WszystkieAdresyView/>
-    </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:NowyAdresViewModel}">
-        <vw:NowyAdresView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:WszystkieDostawyViewModel}">
         <vw:WszystkieDostawyView/>
@@ -173,6 +155,15 @@
       Margin="4"
       />
     </DataTemplate>
+
+
+    <Style TargetType="TextBox">
+        <Style.Triggers>
+            <Trigger Property="Validation.HasError" Value="True">
+                <Setter Property="ToolTip" Value="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=(Validation.Errors)[0].ErrorContent}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 
 
 </ResourceDictionary>

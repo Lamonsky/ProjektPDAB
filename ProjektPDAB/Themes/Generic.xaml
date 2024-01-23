@@ -15,7 +15,7 @@
                         <ToolBar Grid.Row="0" Height="30" Margin="0,2,0,2">
                             <Button Content="+" Width="30" Height="30" Command="{Binding AddCommand}"/>
                             <Button Content="-" Width="30" Height="30"/>
-                            <Button Content="M" Width="30" Height="30"/>
+                            <Button Content="M" Width="30" Height="30" Command="{Binding ModifyCommand}"/>
                             <Button Content="O" Width="30" Height="30" Command="{Binding RefreshCommand}"/>
                         </ToolBar>
                         <StackPanel Grid.Row="1" Background="Aqua">
@@ -24,12 +24,18 @@
                                     <ColumnDefinition Width="auto"/>
                                     <ColumnDefinition Width="1*"/>
                                     <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
                                     <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="auto"/>
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Column="0" Content="Filtrowanie: "/>
-                                <ComboBox Grid.Column="1" ItemsSource="{Binding GetComboBoxFilterList}"/>
-                                <Label Grid.Column="2" Content="Sortowanie: "/>
-                                <ComboBox Grid.Column="3" ItemsSource="{Binding GetComboBoxSortList}"/>
+                                <Label Grid.Column="0" Content="Sortowanie: "/>
+                                <ComboBox Grid.Column="1" ItemsSource="{Binding SortComboBoxListItems}" SelectedValue="{Binding Path=SortField,Mode=TwoWay}"/>
+                                <Button Grid.Column="2" Content="Sortuj" Command="{Binding SortCommand}"/>
+                                <Label Grid.Column="3" Content="Filtrowanie: "/>
+                                <ComboBox Grid.Column="4" ItemsSource="{Binding FilterComboBoxListItems}" SelectedValue="{Binding Path=FilterField,Mode=TwoWay}"/>
+                                <TextBox Grid.Column="5" Text="{Binding FindTextBox}"/>
+                                <Button Grid.Column="6" Content="Filtruj" Command="{Binding FilterCommand}"/>
                             </Grid>
                         </StackPanel>
                         <ContentPresenter Grid.Row="2" Margin="0,5,0,5"/>

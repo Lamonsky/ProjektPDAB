@@ -58,4 +58,8 @@ public partial class Transakcje
     [ForeignKey("IdsposobuPlatnosci")]
     [InverseProperty("Transakcjes")]
     public virtual SposobPlatnosci? IdsposobuPlatnosciNavigation { get; set; }
+
+    [ForeignKey("Idzamowienia")]
+    [InverseProperty("Transakcjes")]
+    public virtual Zamowienium? IdzamowieniaNavigation { get; set; }
 }

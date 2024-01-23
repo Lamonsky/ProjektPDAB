@@ -107,7 +107,6 @@ namespace ProjektPDAB.ViewModels
                 new CommandViewModel("Naprawy",new BaseCommand(ShowNaprawy)),
                 new CommandViewModel("Dostawcy",new BaseCommand(ShowDostawcy)),
                 new CommandViewModel("Klienci",new BaseCommand(ShowKlienci)),
-                new CommandViewModel("Kategorie",new BaseCommand(ShowKategorie)),
 
             };
         }
@@ -136,9 +135,6 @@ namespace ProjektPDAB.ViewModels
                 case "KlienciAdd":
                     CreateKlient();
                     break;
-                case "KategorieAdd":
-                    CreateKategoria();
-                    break;
             }
         }
         #endregion
@@ -154,14 +150,6 @@ namespace ProjektPDAB.ViewModels
         private void ShowDostawcy()
         {
             ShowAllWorkspace<WszyscyDostawcyViewModel>();
-        }
-        private void ShowSposobPlatnosci()
-        {
-            ShowAllWorkspace<WszystkieSposobyPlatnosciViewModel>();
-        }
-        private void CreateSposobPlatnosci()
-        {
-            CreateWorkspace<NowySposobPlatnosciViewModel>();
         }
         private void ShowSerwisy()
         {
@@ -186,22 +174,6 @@ namespace ProjektPDAB.ViewModels
         private void CreateKlient()
         {
             CreateWorkspace<NowyKlientViewModel>();
-        }
-        private void ShowKategorie()
-        {
-            ShowAllWorkspace<WszystkieKategorieViewModel>();
-        }
-        private void CreateKategoria()
-        {
-            CreateWorkspace<NowaKategoriaViewModel>();
-        }
-        private void ShowAdresy()
-        {
-            ShowAllWorkspace<WszystkieAdresyViewModel>();
-        }
-        private void CreateAdres()
-        {
-            CreateWorkspace<NowyAdresViewModel>();
         }
         private void ShowDostawy()
         {

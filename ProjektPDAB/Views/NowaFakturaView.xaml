@@ -21,12 +21,13 @@
                     <ColumnDefinition Width="3*"/>
                 </Grid.ColumnDefinitions>
                 <Label Content="Data dokumentu" Grid.Column="1"/>
-                <DatePicker Grid.Column="2" Text="{Binding Path=KiedyDodal, UpdateSourceTrigger=PropertyChanged}"/>
+                <DatePicker Grid.Column="2" SelectedDateFormat="Short" SelectedDate="{Binding Path=KiedyDodal, UpdateSourceTrigger=PropertyChanged}"/>
             </Grid>
         </Expander>
         <Expander Grid.Row="1" IsExpanded="True" Header="Informacje o dostawie">
             <Grid>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -42,15 +43,17 @@
                 <Label Content="Numer Faktury:" Grid.Row="0" Grid.Column="1"/>
                 <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding Path=Numer, UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Content="Data Wystawienia:" Grid.Row="1" Grid.Column="1"/>
-                <DatePicker Grid.Row="1" Grid.Column="2" SelectedDate="{Binding Path=DataWystawienia, UpdateSourceTrigger=PropertyChanged}"/>
+                <DatePicker Grid.Row="1" Grid.Column="2" SelectedDateFormat="Short" SelectedDate="{Binding Path=DataWystawienia, UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Content="Termin Płatności:" Grid.Row="2" Grid.Column="1"/>
-                <DatePicker Grid.Row="2" Grid.Column="2" SelectedDate="{Binding Path=TerminPlatnosci, UpdateSourceTrigger=PropertyChanged}"/>
+                <DatePicker Grid.Row="2" Grid.Column="2" SelectedDateFormat="Short" SelectedDate="{Binding Path=TerminPlatnosci, UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Content="Klient: " Grid.Row="3" Grid.Column="1"/>
                 <ComboBox Grid.Row="3" Grid.Column="2" ItemsSource="{Binding KlientComboBoxItems}" DisplayMemberPath="Value" SelectedValuePath="Key" SelectedValue="{Binding Path=Idklienta,Mode=TwoWay}"/>
                 <Label Content="Sposób Płatności: " Grid.Row="4" Grid.Column="1"/>
                 <ComboBox Grid.Row="4" Grid.Column="2" ItemsSource="{Binding SposobPlatnosciComboBoxItems}" DisplayMemberPath="Nazwa" SelectedValuePath="IdsposobuPlatnosci" SelectedValue="{Binding Path=IdsposobuPlatnosci,Mode=TwoWay}"/>
-
+                <Label Content="Typ Faktury: " Grid.Row="5" Grid.Column="1"/>
+                <ComboBox Grid.Row="5" Grid.Column="2" ItemsSource="{Binding TypFakturyComboBoxItems}" DisplayMemberPath="Nazwa" SelectedValuePath="IdtypuFaktury" SelectedValue="{Binding Path=IdtypuFaktury,Mode=TwoWay}"/>
             </Grid>
         </Expander>
+        
     </Grid>
 </local:JedenViewBase>

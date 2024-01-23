@@ -19,8 +19,7 @@ public partial class Naprawy
     [Column("IDProduktu")]
     public int? Idproduktu { get; set; }
 
-    [Column(TypeName = "date")]
-    public DateTime? DataNaprawy { get; set; }
+    public DateOnly? DataNaprawy { get; set; }
 
     [StringLength(50)]
     public string? StatusNaprawy { get; set; }

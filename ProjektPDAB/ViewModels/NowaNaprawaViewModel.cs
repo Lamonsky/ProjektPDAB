@@ -33,7 +33,7 @@ namespace ProjektPDAB.ViewModels
             }
         }
         public int Idnaprawy { get; }
-        public DateTime? DataNaprawy
+        public DateOnly? DataNaprawy
         {
             get
             {
@@ -102,7 +102,7 @@ namespace ProjektPDAB.ViewModels
                     select new KeyAndValue
                     {
                         Key = Serwisy.Idserwisu,
-                        Value = Serwisy.NazwaSerwisu + " " + Serwisy.Email + " " + Serwisy.Telefon
+                        Value = Serwisy.NazwaSerwisu + " " + Serwisy.Ulica + " " + Serwisy.NrDomu + "/" + Serwisy.NrLokalu + " " + Serwisy.KodPocztowy + " " + Serwisy.Miejscowosc,
                     }
                 ).ToList().AsQueryable();
             }
@@ -119,6 +119,19 @@ namespace ProjektPDAB.ViewModels
                         Value = Produkty.IdkategoriiNavigation.NazwaKategorii + " " + Produkty.Nazwa
                     }
                 ).ToList().AsQueryable();
+            }
+        }
+        public List<string> StatusNaprawyComboBox
+        {
+            get
+            {
+                return new List<string>()
+                {
+                    "Nowa",
+                    "W toku",
+                    "Zrealizowana",
+                    "Anulowana"
+                };
             }
         }
         #endregion

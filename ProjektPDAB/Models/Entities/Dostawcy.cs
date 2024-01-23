@@ -23,8 +23,26 @@ public partial class Dostawcy
     [StringLength(50)]
     public string? Email { get; set; }
 
-    [Column("IDAdresu")]
-    public int? Idadresu { get; set; }
+    [StringLength(50)]
+    public string? Miejscowosc { get; set; }
+
+    [StringLength(50)]
+    public string? Ulica { get; set; }
+
+    [StringLength(50)]
+    public string? NrDomu { get; set; }
+
+    [StringLength(50)]
+    public string? NrLokalu { get; set; }
+
+    [StringLength(50)]
+    public string? KodPocztowy { get; set; }
+
+    [StringLength(50)]
+    public string? Wojewodztwo { get; set; }
+
+    [StringLength(50)]
+    public string? Kraj { get; set; }
 
     [StringLength(50)]
     public string? Uwagi { get; set; }
@@ -55,8 +73,4 @@ public partial class Dostawcy
 
     [InverseProperty("IddostawcyNavigation")]
     public virtual ICollection<Dostawy> Dostawies { get; set; } = new List<Dostawy>();
-
-    [ForeignKey("Idadresu")]
-    [InverseProperty("Dostawcies")]
-    public virtual Adre? IdadresuNavigation { get; set; }
 }

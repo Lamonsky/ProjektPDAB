@@ -56,4 +56,7 @@ public partial class Zamowienium
     [ForeignKey("Idproduktu")]
     [InverseProperty("Zamowienia")]
     public virtual Produkty? IdproduktuNavigation { get; set; }
+
+    [InverseProperty("IdzamowieniaNavigation")]
+    public virtual ICollection<Transakcje> Transakcjes { get; set; } = new List<Transakcje>();
 }

@@ -47,7 +47,7 @@ namespace ProjektPDAB.ViewModels
                 }
             }
         }
-        public DateTime? DataWystawienia
+        public DateOnly? DataWystawienia
         {
             get
             {
@@ -62,7 +62,7 @@ namespace ProjektPDAB.ViewModels
                 }
             }
         }
-        public DateTime? TerminPlatnosci
+        public DateOnly? TerminPlatnosci
         {
             get
             {
@@ -107,6 +107,21 @@ namespace ProjektPDAB.ViewModels
                 }
             }
         }
+        public int? IdtypuFaktury
+        {
+            get
+            {
+                return item.IdtypuFaktury;
+            }
+            set
+            {
+                if (item.IdtypuFaktury != value)
+                {
+                    item.IdtypuFaktury = value;
+                    OnPropertyChanged(() => IdtypuFaktury);
+                }
+            }
+        }
         public IQueryable<SposobPlatnosci> SposobPlatnosciComboBoxItems
         {
             get
@@ -114,6 +129,16 @@ namespace ProjektPDAB.ViewModels
                 return (
                     from IdsposobuPlatnosci in projektEntities.SposobPlatnoscis
                     select IdsposobuPlatnosci
+                ).ToList().AsQueryable();
+            }
+        }
+        public IQueryable<TypFaktury> TypFakturyComboBoxItems
+        {
+            get
+            {
+                return (
+                    from IdtypuFaktury in projektEntities.TypFakturies
+                    select IdtypuFaktury
                 ).ToList().AsQueryable();
             }
         }

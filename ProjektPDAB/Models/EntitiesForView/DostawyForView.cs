@@ -13,6 +13,9 @@ namespace ProjektPDAB.Models.EntitiesForView
         public string NazwaDostawcy{ get; set; }
         public DateTime? DataDostawy { get; set; }
         public string StatusDostawy { get; set; }
+        public string NazwaProduktu { get; set; }
+        public decimal? CenaProduktu { get; set; }    
+        public int? Ilosc { get; set; }
         #endregion
     }
 }

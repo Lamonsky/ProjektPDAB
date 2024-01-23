@@ -11,8 +11,11 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Idserwisu}"/>
                 <DataGridTextColumn Header="Nazwa" Binding="{Binding NazwaSerwisu}"/>
-                <DataGridTextColumn Header="Kontakt" Binding="{Binding Kontakt}"/>
-                <DataGridTextColumn Header="Adres" Binding="{Binding Adres}"/>
+                <DataGridTextColumn Header="Telefon" Binding="{Binding Telefon}"/>
+                <DataGridTextColumn Header="E-Mail" Binding="{Binding Email}"/>
+                <DataGridTextColumn Header="Adres" Binding="{Binding Ulica}"/>
+                <DataGridTextColumn Header="Wojewodztwo" Binding="{Binding Wojewodztwo}"/>
+                <DataGridTextColumn Header="Kraj" Binding="{Binding Kraj}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

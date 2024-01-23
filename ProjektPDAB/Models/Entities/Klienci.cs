@@ -25,8 +25,26 @@ public partial class Klienci
     [StringLength(50)]
     public string? Telefon { get; set; }
 
-    [Column("IDAdresu")]
-    public int? Idadresu { get; set; }
+    [StringLength(50)]
+    public string? Miejscowosc { get; set; }
+
+    [StringLength(50)]
+    public string? Ulica { get; set; }
+
+    [StringLength(50)]
+    public string? NrDomu { get; set; }
+
+    [StringLength(50)]
+    public string? NrLokalu { get; set; }
+
+    [StringLength(50)]
+    public string? KodPocztowy { get; set; }
+
+    [StringLength(50)]
+    public string? Wojewodztwo { get; set; }
+
+    [StringLength(50)]
+    public string? Kraj { get; set; }
 
     [Column("NIP_PESEL")]
     [StringLength(50)]
@@ -57,10 +75,6 @@ public partial class Klienci
 
     [InverseProperty("IdklientaNavigation")]
     public virtual ICollection<Faktura> Fakturas { get; set; } = new List<Faktura>();
-
-    [ForeignKey("Idadresu")]
-    [InverseProperty("Kliencis")]
-    public virtual Adre? IdadresuNavigation { get; set; }
 
     [InverseProperty("IdklientaNavigation")]
     public virtual ICollection<Transakcje> Transakcjes { get; set; } = new List<Transakcje>();

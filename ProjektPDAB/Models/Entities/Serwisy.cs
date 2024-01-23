@@ -16,8 +16,26 @@ public partial class Serwisy
     [StringLength(50)]
     public string? NazwaSerwisu { get; set; }
 
-    [Column("IDAdres")]
-    public int? Idadres { get; set; }
+    [StringLength(50)]
+    public string? Miejscowosc { get; set; }
+
+    [StringLength(50)]
+    public string? Ulica { get; set; }
+
+    [StringLength(50)]
+    public string? NrDomu { get; set; }
+
+    [StringLength(50)]
+    public string? NrLokalu { get; set; }
+
+    [StringLength(50)]
+    public string? KodPocztowy { get; set; }
+
+    [StringLength(50)]
+    public string? Wojewodztwo { get; set; }
+
+    [StringLength(50)]
+    public string? Kraj { get; set; }
 
     [StringLength(50)]
     public string? Telefon { get; set; }
@@ -48,10 +66,6 @@ public partial class Serwisy
     public DateTime? KiedyUsunal { get; set; }
 
     public bool? CzyAktywny { get; set; }
-
-    [ForeignKey("Idadres")]
-    [InverseProperty("Serwisies")]
-    public virtual Adre? IdadresNavigation { get; set; }
 
     [InverseProperty("IdserwisuNavigation")]
     public virtual ICollection<Naprawy> Naprawies { get; set; } = new List<Naprawy>();

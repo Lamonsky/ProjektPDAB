@@ -21,13 +21,12 @@
                     <ColumnDefinition Width="3*"/>
                 </Grid.ColumnDefinitions>
                 <Label Content="Data dokumentu" Grid.Column="1"/>
-                <DatePicker Grid.Column="2" Text="{Binding Path=KiedyDodal, UpdateSourceTrigger=PropertyChanged}"/>
+                <DatePicker Grid.Column="2" SelectedDate="{Binding Path=KiedyDodal, UpdateSourceTrigger=PropertyChanged}"/>
             </Grid>
         </Expander>
         <Expander Grid.Row="1" IsExpanded="True" Header="Informacje o dostawie">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -40,13 +39,13 @@
                     <ColumnDefinition Width="3*"/>
                 </Grid.ColumnDefinitions>
                 <Label Content="Data Naprawy:" Grid.Row="0" Grid.Column="1"/>
-                <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding Path=DataNaprawy, UpdateSourceTrigger=PropertyChanged}"/>
+                <DatePicker Grid.Row="0" Grid.Column="2" SelectedDate="{Binding Path=DataNaprawy, UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Content="Status Naprawy:" Grid.Row="1" Grid.Column="1"/>
-                <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=StatusNaprawy, UpdateSourceTrigger=PropertyChanged}"/>
+                <ComboBox Grid.Row="1" Grid.Column="2" ItemsSource="{Binding Path=StatusNaprawyComboBox}" Text="{Binding Path=StatusNaprawy, UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Content="Serwis:" Grid.Row="2" Grid.Column="1"/>
-                <ComboBox Grid.Row="2" Grid.Column="2" ItemsSource="{Binding SerwisComboBoxItems}" DisplayMemberPath="Value" SelectedValuePath="Key" SelectedValue="{Binding Path=Idserwisu,Mode=TwoWay}"/>
+                <ComboBox Grid.Row="2" Grid.Column="2" ItemsSource="{Binding Path=SerwisComboBoxItems}" DisplayMemberPath="Value" SelectedValuePath="Key" SelectedValue="{Binding Path=Idserwisu,Mode=TwoWay}"/>
                 <Label Content="Produkt: " Grid.Row="3" Grid.Column="1"/>
-                <ComboBox Grid.Row="3" Grid.Column="2" ItemsSource="{Binding ProduktComboBoxItems}" DisplayMemberPath="Value" SelectedValuePath="Key" SelectedValue="{Binding Path=Idproduktu,Mode=TwoWay}"/>
+                <ComboBox Grid.Row="3" Grid.Column="2" ItemsSource="{Binding Path=ProduktComboBoxItems}" DisplayMemberPath="Value" SelectedValuePath="Key" SelectedValue="{Binding Path=Idproduktu,Mode=TwoWay}"/>
             </Grid>
         </Expander>
     </Grid>

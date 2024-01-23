@@ -141,6 +141,20 @@ namespace ProjektPDAB.ViewModels
                 ).ToList().AsQueryable();
             }
         }
+
+        public List<string> StatusDostawyComboBox
+        {
+            get
+            {
+                return new List<string>()
+                {
+                    "Nowa",
+                    "W toku",
+                    "Dostarczona",
+                    "Anulowana"
+                };
+            }
+        }
         #endregion
     }
 }

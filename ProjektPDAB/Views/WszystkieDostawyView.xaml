@@ -13,6 +13,9 @@
                 <DataGridTextColumn Header="Nazwa Dostawcy" Binding="{Binding NazwaDostawcy}"/>
                 <DataGridTextColumn Header="Data Dostawy" Binding="{Binding DataDostawy}"/>
                 <DataGridTextColumn Header="Status Dostawy" Binding="{Binding StatusDostawy}"/>
+                <DataGridTextColumn Header="Nazwa Produktu" Binding="{Binding NazwaProduktu}"/>
+                <DataGridTextColumn Header="Cena" Binding="{Binding CenaProduktu}"/>
+                <DataGridTextColumn Header="Ilość" Binding="{Binding Ilosc}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

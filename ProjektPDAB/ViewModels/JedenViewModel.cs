@@ -1,10 +1,12 @@
-﻿using ProjektPDAB.Helpers;
+﻿using GalaSoft.MvvmLight.Messaging;
+using ProjektPDAB.Helpers;
 using ProjektPDAB.Models.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace ProjektPDAB.ViewModels
@@ -60,11 +62,93 @@ namespace ProjektPDAB.ViewModels
         }
         private void SaveAndClose()
         {
-            //zaisujemy nowy obiekt
-            Save();
-            //zamykamy zakładke
-            OnRequestClose();
+            if (IsValid())
+            {
+                //zaisujemy nowy obiekt
+                Save();
+                //zamykamy zakładke
+                OnRequestClose();
+            }
+            else
+            {
+                MessageBox.Show(Application.Current.MainWindow, "Popraw błędy w formularzu");
+            }
+        }
+        public List<string> KrajComboBox
+        {
+            get
+            {
+                return new List<string>()
+                {
+                    "Austria",
+                    "Belgia",
+                    "Bułgaria",
+                    "Chorwacja",
+                    "Cypr",
+                    "Czechy",
+                    "Dania",
+                    "Estonia",
+                    "Finlandia",
+                    "Francja",
+                    "Niemcy",
+                    "Grecja",
+                    "Węgry",
+                    "Irlandia",
+                    "Włochy",
+                    "Łotwa",
+                    "Litwa",
+                    "Luksemburg",
+                    "Malta",
+                    "Holandia",
+                    "Polska",
+                    "Portugalia",
+                    "Rumunia",
+                    "Słowacja",
+                    "Słowenia",
+                    "Hiszpania",
+                    "Szwecja",
+                    "Wielka Brytania",
+                    "Stany Zjednoczone",
+                    "Brazylia",
+                    "Rosja",
+                    "Ukraina",
+                    "Białoruś",
+                    "Kanada",
+                    "Meksyk",
+                    "Argentyna"
+                };
+            }
+        }
+        public List<string> WojewodztwaComboBox
+        {
+            get
+            {
+                return new List<string>()
+                {
+                    "Zachodniopomorskie",
+                    "Pomorskie",
+                    "Warmińsko-Mazurskie",
+                    "Lubuskie",
+                    "Wielkopolskie",
+                    "Kujawsko-Pomorskie",
+                    "Mazowieckie",
+                    "Podlaskie",
+                    "Dolnośląskie",
+                    "Łódzkie",
+                    "Lubelskie",
+                    "Opolskie",
+                    "Śląskie",
+                    "Świętokrzyskie",
+                    "Małopolskie",
+                    "Podkarpackie"
+                };
+            }
         }
         #endregion
+
+        public virtual bool IsValid()
+        {
+            return true;
+        }
     }
 }

@@ -16,14 +16,8 @@ public partial class TypFaktury
     [StringLength(50)]
     public string? Nazwa { get; set; }
 
-    [Column("StawkaVAT")]
-    public int? StawkaVat { get; set; }
-
     [StringLength(50)]
     public string? Skrot { get; set; }
-
-    [StringLength(50)]
-    public string? Uwagi { get; set; }
 
     [StringLength(50)]
     public string? KtoDodal { get; set; }

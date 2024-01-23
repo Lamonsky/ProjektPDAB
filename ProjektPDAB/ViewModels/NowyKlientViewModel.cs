@@ -1,19 +1,22 @@
 ﻿using ProjektPDAB.Models.Entities;
+using ProjektPDAB.Validators;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ProjektPDAB.ViewModels
 {
-    class NowyKlientViewModel : JedenViewModel<Klienci>
+    class NowyKlientViewModel : JedenViewModel<Klienci>, IDataErrorInfo 
     {
         #region Konstruktor
         public NowyKlientViewModel() : base("Klienci")
         {
             item = new Klienci();
         }
+
         #endregion
         #region Dane
         public DateTime? KiedyDodal
@@ -98,21 +101,164 @@ namespace ProjektPDAB.ViewModels
                 }
             }
         }
-        public int? Idadresu
+        public string Miejscowosc
         {
             get
             {
-                return item.Idadresu;
+                return item.Miejscowosc;
             }
             set
             {
-                if (item.Idadresu != value)
+                if (item.Miejscowosc != value)
                 {
-                    item.Idadresu = value;
-                    OnPropertyChanged(() => Idadresu);
+                    item.Miejscowosc = value;
+                    OnPropertyChanged(() => Miejscowosc);
                 }
             }
         }
+        public string Ulica
+        {
+            get
+            {
+                return item.Ulica;
+            }
+            set
+            {
+                if (item.Ulica != value)
+                {
+                    item.Ulica = value;
+                    OnPropertyChanged(() => Ulica);
+                }
+            }
+        }
+        public string NrDomu
+        {
+            get
+            {
+                return item.NrDomu;
+            }
+            set
+            {
+                if (item.NrDomu != value)
+                {
+                    item.NrDomu = value;
+                    OnPropertyChanged(() => NrDomu);
+                }
+            }
+        }
+        public string NrLokalu
+        {
+            get
+            {
+                return item.NrLokalu;
+            }
+            set
+            {
+                if (item.NrLokalu != value)
+                {
+                    item.NrLokalu = value;
+                    OnPropertyChanged(() => NrLokalu);
+                }
+            }
+        }
+        public string KodPocztowy
+        {
+            get
+            {
+                return item.KodPocztowy;
+            }
+            set
+            {
+                if (item.KodPocztowy != value)
+                {
+                    item.KodPocztowy = value;
+                    OnPropertyChanged(() => KodPocztowy);
+                }
+            }
+        }
+        public string Wojewodztwo
+        {
+            get
+            {
+                return item.Wojewodztwo;
+            }
+            set
+            {
+                if (item.Wojewodztwo != value)
+                {
+                    item.Wojewodztwo = value;
+                    OnPropertyChanged(() => Wojewodztwo);
+                }
+            }
+        }
+        public string Kraj
+        {
+            get
+            {
+                return item.Kraj;
+            }
+            set
+            {
+                if (item.Kraj != value)
+                {
+                    item.Kraj = value;
+                    OnPropertyChanged(() => Kraj);
+                }
+            }
+        }
+        public string NipPesel
+        {
+            get
+            {
+                return item.NipPesel;
+            }
+            set
+            {
+                if (item.NipPesel != value)
+                {
+                    item.NipPesel = value;
+                    OnPropertyChanged(() => NipPesel);
+                }
+            }
+        }
+        public string this[string columnName]
+        {
+            get
+            {
+                switch (columnName)
+                {
+                    case nameof(Imie):
+                        {
+                            return Imie.ValidateFirstLetterUp();
+                        }
+                    case nameof(Nazwisko):
+                        {
+                            return Nazwisko.ValidateFirstLetterUp();
+                        }
+                    case nameof(Miejscowosc):
+                        {
+                            return Miejscowosc.ValidateFirstLetterUp();
+                        }
+                    case nameof(Ulica):
+                        {
+                            return Ulica.ValidateFirstLetterUp();
+                        }
+                    case nameof(NipPesel):
+                        {
+                            return NipPesel.NIPPeselValidator();
+                        }
+                    default: return string.Empty;
+                }
+            }
+        }
+
+        public string Error { get; }
+        public bool HasErrors => string.IsNullOrEmpty(Error);
+        public override bool IsValid()
+        {
+            return HasErrors;
+        }
         #endregion
+
     }
 }
