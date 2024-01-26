@@ -120,6 +120,11 @@ namespace ProjektPDAB.ViewModels
                 List = new ObservableCollection<FakturaForView>(List.OrderBy(item => item.TypFaktury));
             }
         }
+
+        public override void modify()
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }

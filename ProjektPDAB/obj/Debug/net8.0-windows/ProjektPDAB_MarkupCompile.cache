@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\App.xaml
-17-1433919691
+18-1082952143
 
-631826173656
+651063002649
 248623723009
-Themes\Generic.xaml;Views\MainWindow.xaml;Views\NowaDostawaView.xaml;Views\NowaFakturaView.xaml;Views\NowaNaprawaView.xaml;Views\NowyDostawcaView.xaml;Views\NowyKlientView.xaml;Views\NowyPracownikView.xaml;Views\NowySerwisView.xaml;Views\Resources\ViewResources.xaml;Views\WszyscyDostawcyView.xaml;Views\WszyscyKlienciView.xaml;Views\WszyscyPracownicyView.xaml;Views\WszystkieDostawyView.xaml;Views\WszystkieFakturyView.xaml;Views\WszystkieNaprawyView.xaml;Views\WszystkieSerwisyView.xaml;
+Themes\Generic.xaml;Views\MainWindow.xaml;Views\ModyfikujKlientView.xaml;Views\NowaDostawaView.xaml;Views\NowaFakturaView.xaml;Views\NowaNaprawaView.xaml;Views\NowyDostawcaView.xaml;Views\NowyKlientView.xaml;Views\NowyPracownikView.xaml;Views\NowySerwisView.xaml;Views\Resources\ViewResources.xaml;Views\WszyscyDostawcyView.xaml;Views\WszyscyKlienciView.xaml;Views\WszyscyPracownicyView.xaml;Views\WszystkieDostawyView.xaml;Views\WszystkieFakturyView.xaml;Views\WszystkieNaprawyView.xaml;Views\WszystkieSerwisyView.xaml;
 
 False
 

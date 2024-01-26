@@ -1,10 +1,13 @@
 ﻿using ProjektPDAB.Models.Entities;
+using ProjektPDAB.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace ProjektPDAB.ViewModels
 {
@@ -34,6 +37,9 @@ namespace ProjektPDAB.ViewModels
                         NipPesel = Klienci.NipPesel
                     }
                 );
+        }
+        public override void modify()
+        {
         }
         public override List<string> GetComboBoxSortList()
         {

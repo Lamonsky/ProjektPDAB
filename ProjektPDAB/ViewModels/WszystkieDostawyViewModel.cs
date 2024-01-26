@@ -96,6 +96,11 @@ namespace ProjektPDAB.ViewModels
                 List = new ObservableCollection<DostawyForView>(List.OrderBy(item => item.CenaProduktu));
             }
         }
+
+        public override void modify()
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }

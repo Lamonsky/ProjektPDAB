@@ -5,6 +5,7 @@ using ProjektPDAB.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -130,10 +131,7 @@ namespace ProjektPDAB.ViewModels
         {
             Messenger.Default.Send(DisplayName + "Add");
         }
-        private void modify()
-        {
-            
-        }
+        public abstract void modify();
         #endregion
 
         #region Sortowanie
@@ -159,6 +157,7 @@ namespace ProjektPDAB.ViewModels
         public string FindTextBox { get; set; }
         public string SortField { get; set; }
         public string FilterField { get; set; }
+        public int ItemID { get; set; }
         #endregion
     }
 }

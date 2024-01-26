@@ -172,3 +172,5 @@ C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows
 C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows\ProjektPDAB.pdb
 C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows\ProjektPDAB.genruntimeconfig.cache
 C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows\ref\ProjektPDAB.dll
+C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows\Views\ModyfikujKlientView.g.cs
+C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows\Views\ModyfikujKlientView.baml

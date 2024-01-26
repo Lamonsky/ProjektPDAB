@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ProjektPDAB.ViewModels
 {
-    internal class WszystkieNaprawyViewModel:WszystkieViewModel<NaprawyForView>
+    internal class WszystkieNaprawyViewModel : WszystkieViewModel<NaprawyForView>
     {
         #region Konstruktor
         public WszystkieNaprawyViewModel() : base("Naprawy")
@@ -97,6 +97,11 @@ namespace ProjektPDAB.ViewModels
             {
                 List = new ObservableCollection<NaprawyForView>(List.OrderBy(item => item.NazwaKategorii));
             }
+        }
+
+        public override void modify()
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }
