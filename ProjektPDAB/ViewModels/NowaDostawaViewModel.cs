@@ -1,19 +1,50 @@
-﻿using ProjektPDAB.Models.Entities;
+﻿using GalaSoft.MvvmLight.Messaging;
+using ProjektPDAB.Helpers;
+using ProjektPDAB.Models.Entities;
 using ProjektPDAB.Models.EntitiesForView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace ProjektPDAB.ViewModels
 {
     class NowaDostawaViewModel : JedenViewModel<Dostawy>
     {
+        #region Commands
+        private BaseCommand _ShowProduktyCommand;
+        public ICommand ShowProduktyCommand
+        {
+            get
+            {
+                if(_ShowProduktyCommand == null)
+                {
+                    _ShowProduktyCommand = new BaseCommand(() => Messenger.Default.Send("ShowProdukty"));
+                }
+                return _ShowProduktyCommand;
+            }
+        }
+        private BaseCommand _ShowDostawcyCommand;
+        public ICommand ShowDostawcyCommand
+        {
+            get
+            {
+                if (_ShowDostawcyCommand == null)
+                {
+                    _ShowDostawcyCommand = new BaseCommand(() => Messenger.Default.Send("ShowDostawcy"));
+                }
+                return _ShowDostawcyCommand;
+            }
+        }
+        #endregion
         #region Konstruktor
         public NowaDostawaViewModel() : base("Dostawy")
         {
             item = new Dostawy();
+            Messenger.Default.Register<Produkty>(this, getWybranyProdukt);
+            Messenger.Default.Register<Dostawcy>(this, getWybranyDostawca);
         }
         #endregion
         #region Dane
@@ -117,6 +148,38 @@ namespace ProjektPDAB.ViewModels
                 }
             }
         }
+        private string? _ProduktNazwa;
+        public string? ProduktNazwa
+        {
+            get
+            {
+                return _ProduktNazwa;
+            }
+            set
+            {
+                if(_ProduktNazwa != value)
+                {
+                    _ProduktNazwa = value;
+                    base.OnPropertyChanged(() => ProduktNazwa);
+                }
+            }
+        }
+        private string _DostawcaNazwa;
+        public string DostawcaNazwa
+        {
+            get
+            {
+                return _DostawcaNazwa;
+            }
+            set
+            {
+                if(_DostawcaNazwa != value)
+                {
+                    _DostawcaNazwa = value;
+                    base.OnPropertyChanged(() => DostawcaNazwa);
+                }
+            }
+        }
         public IQueryable<Produkty> ProduktyComboBoxItemsOneArgument
         {
             get
@@ -154,6 +217,18 @@ namespace ProjektPDAB.ViewModels
                     "Anulowana"
                 };
             }
+        }
+        #endregion
+        #region ForeignKey
+        private void getWybranyProdukt(Produkty produkt)
+        {
+            Idproduktu = produkt.Idproduktu;
+            ProduktNazwa = produkt.Producent + " " + produkt.Nazwa + " " + produkt.Cena + "zł";
+        }
+        private void getWybranyDostawca(Dostawcy dostawca)
+        {
+            Iddostawcy = dostawca.Iddostawcy;
+            DostawcaNazwa = dostawca.NazwaDostawcy + " " + dostawca.NumerTelefonu + "\\" + dostawca.Email;
         }
         #endregion
     }

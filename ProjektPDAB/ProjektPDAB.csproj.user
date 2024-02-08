@@ -7,7 +7,11 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <Compile Update="Views\GeneratorFakturView.xaml.cs">
+=======
     <Compile Update="Views\ModyfikujKlientView.xaml.cs">
+>>>>>>> 230d8b7aa4a3bc21626d30bfd4f5ef60fc46a281
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\NowaDostawaView.xaml.cs">
@@ -16,10 +20,25 @@
     <Compile Update="Views\NowaFakturaView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\NowaKategoriaView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\NowaNaprawaView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\NowyDostawcaView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\NowyProduktView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\NowySposobPlatnosciView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\RaportFakturView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\WszystkieFakturyForGeneratorView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\WszystkieNaprawyView.xaml.cs">
@@ -60,7 +79,11 @@
     <Page Update="Themes\Generic.xaml">
       <SubType>Designer</SubType>
     </Page>
+<<<<<<< HEAD
+    <Page Update="Views\GeneratorFakturView.xaml">
+=======
     <Page Update="Views\ModyfikujKlientView.xaml">
+>>>>>>> 230d8b7aa4a3bc21626d30bfd4f5ef60fc46a281
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\NowaDostawaView.xaml">
@@ -69,10 +92,25 @@
     <Page Update="Views\NowaFakturaView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\NowaKategoriaView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\NowaNaprawaView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\NowyDostawcaView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\NowyProduktView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\NowySposobPlatnosciView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\RaportFakturView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\WszystkieFakturyForGeneratorView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\WszystkieNaprawyView.xaml">
@@ -106,6 +144,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\WszystkieDostawyView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\WszystkieProduktyView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\WszystkieSerwisyView.xaml">

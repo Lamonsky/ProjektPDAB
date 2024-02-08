@@ -7,12 +7,12 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" SelectedItem="{Binding Path=WybranaFaktura, Mode=TwoWay}" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding IdFaktury}"/>
                 <DataGridTextColumn Header="Numer Faktury" Binding="{Binding Numer}"/>
-                <DataGridTextColumn Header="Data Wystawienia" Binding="{Binding DataWystawienia}"/>
-                <DataGridTextColumn Header="Termin Platnosci" Binding="{Binding TerminPlatnosci}"/>
+                <DataGridTextColumn Header="Data Wystawienia" Binding="{Binding DataWystawienia, StringFormat=\{0:dd.MM.yy HH:mm:ss\}}" />
+                <DataGridTextColumn Header="Termin Platnosci" Binding="{Binding TerminPlatnosci, StringFormat=\{0:dd.MM.yy HH:mm:ss\} }"/>
                 <DataGridTextColumn Header="Imie" Binding="{Binding Imie}"/>
                 <DataGridTextColumn Header="Nazwisko" Binding="{Binding Nazwisko}"/>
                 <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>

@@ -1,5 +1,10 @@
+<<<<<<< HEAD
+﻿using GalaSoft.MvvmLight.Messaging;
+using ProjektPDAB.Models.Entities;
+=======
 ﻿using ProjektPDAB.Models.Entities;
 using ProjektPDAB.Views;
+>>>>>>> 230d8b7aa4a3bc21626d30bfd4f5ef60fc46a281
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,6 +18,25 @@ namespace ProjektPDAB.ViewModels
 {
     class WszyscyKlienciViewModel : WszystkieViewModel<Klienci>
     {
+        #region Commands
+        private Klienci _WybranyKlient;
+        public Klienci WybranyKlient
+        {
+            get
+            {
+                return _WybranyKlient;
+            }
+            set
+            {
+                if(_WybranyKlient != value)
+                {
+                    _WybranyKlient = value;
+                    Messenger.Default.Send(_WybranyKlient);
+                    OnRequestClose();
+                }
+            }
+        }
+        #endregion
         #region Konstruktor
         public WszyscyKlienciViewModel() : base("Klienci") { }
         #endregion

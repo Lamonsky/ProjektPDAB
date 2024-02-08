@@ -1,18 +1,34 @@
-﻿using ProjektPDAB.Models.Entities;
+﻿using GalaSoft.MvvmLight.Messaging;
+using ProjektPDAB.Helpers;
+using ProjektPDAB.Models.Entities;
 using ProjektPDAB.Models.EntitiesForView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace ProjektPDAB.ViewModels
 {
     internal class NowaFakturaViewModel : JedenViewModel<Faktura>
     {
+        private BaseCommand _ShowKlienciCommand;
+        public ICommand ShowKlienciCommand
+        {
+            get
+            {
+                if (_ShowKlienciCommand == null)
+                {
+                    _ShowKlienciCommand = new BaseCommand(() => Messenger.Default.Send("ShowKlienci"));
+                }
+                return _ShowKlienciCommand;
+            }
+        }
         #region Kontruktor
         public NowaFakturaViewModel():base("Faktura"){
             item = new Faktura();
+            Messenger.Default.Register<Klienci>(this, getWybranyKlient);
         }
         #endregion
         #region Dane
@@ -47,7 +63,7 @@ namespace ProjektPDAB.ViewModels
                 }
             }
         }
-        public DateOnly? DataWystawienia
+        public DateTime? DataWystawienia
         {
             get
             {
@@ -62,7 +78,7 @@ namespace ProjektPDAB.ViewModels
                 }
             }
         }
-        public DateOnly? TerminPlatnosci
+        public DateTime? TerminPlatnosci
         {
             get
             {
@@ -89,6 +105,54 @@ namespace ProjektPDAB.ViewModels
                 {
                     item.Idklienta = value;
                     OnPropertyChanged(() => Idklienta);
+                }
+            }
+        }
+        private string? _KlientImie;
+        public string? KlientImie
+        {
+            get
+            {
+                return _KlientImie;
+            }
+            set
+            {
+                if (_KlientImie != value)
+                {
+                    _KlientImie = value;
+                    base.OnPropertyChanged(() => KlientImie);
+                }
+            }
+        }
+        private string? _KlientNazwisko;
+        public string? KlientNazwisko
+        {
+            get
+            {
+                return _KlientNazwisko;
+            }
+            set
+            {
+                if (_KlientNazwisko != value)
+                {
+                    _KlientNazwisko = value;
+                    base.OnPropertyChanged(() => KlientNazwisko);
+                }
+            }
+        }
+        private string? _KlientAdres;
+        public string? KlientAdres
+        {
+            get
+            {
+                return _KlientAdres;
+            }
+            set
+            {
+                if (_KlientAdres != value)
+                {
+                    _KlientAdres = value;
+                    base.OnPropertyChanged(() => KlientAdres);
                 }
             }
         }
@@ -155,6 +219,15 @@ namespace ProjektPDAB.ViewModels
                     }
                 ).ToList().AsQueryable();
             }
+        }
+        #endregion
+        #region ForeignKey
+        private void getWybranyKlient(Klienci klient)
+        {
+            Idklienta = klient.Idklienta;
+            KlientImie = klient.Imie;
+            KlientNazwisko = klient.Nazwisko;
+            KlientAdres = klient.Ulica + " " + klient.NrDomu + "/" + klient.NrLokalu + " " + klient.KodPocztowy + " " + klient.Miejscowosc;
         }
         #endregion
     }

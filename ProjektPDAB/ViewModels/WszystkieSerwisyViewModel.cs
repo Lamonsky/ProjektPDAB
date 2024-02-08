@@ -1,4 +1,5 @@
-﻿using ProjektPDAB.Models.Entities;
+﻿using GalaSoft.MvvmLight.Messaging;
+using ProjektPDAB.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,6 +11,25 @@ namespace ProjektPDAB.ViewModels
 {
     internal class WszystkieSerwisyViewModel : WszystkieViewModel<Serwisy>
     {
+        #region Commands
+        private Serwisy _WybranySerwis;
+        public Serwisy WybranySerwis
+        {
+            set
+            {
+                if (_WybranySerwis != value)
+                {
+                    _WybranySerwis = value;
+                    Messenger.Default.Send(_WybranySerwis);
+                    OnRequestClose();
+                }
+            }
+            get
+            {
+                return _WybranySerwis;
+            }
+        }
+        #endregion
         #region Konstruktor
         public WszystkieSerwisyViewModel() : base("Serwisy") {
         }

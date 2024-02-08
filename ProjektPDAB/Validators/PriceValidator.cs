@@ -8,7 +8,7 @@ namespace ProjektPDAB.Validators
 {
     public class PriceValidator
     {
-        public static string IsGreaterThanZero(int? value)
+        public static string IsGreaterThanZero(decimal? value)
         {
             var result = string.Empty;
             if (value == null || value <= 0)

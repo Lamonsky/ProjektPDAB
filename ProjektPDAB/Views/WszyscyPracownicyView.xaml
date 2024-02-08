@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Idpracownika}"/>
                 <DataGridTextColumn Header="Imię" Binding="{Binding Imie}"/>
@@ -17,7 +17,7 @@
                 <DataGridTextColumn Header="Adres" Binding="{Binding Ulica}"/>
                 <DataGridTextColumn Header="Wojewodztwo" Binding="{Binding Wojewodztwo}"/>
                 <DataGridTextColumn Header="Kraj" Binding="{Binding Kraj}"/>
-                <DataGridTextColumn Header="Data Zatrudnienia" Binding="{Binding DataZatrudnienia}"/>
+                <DataGridTextColumn Header="Data Zatrudnienia" Binding="{Binding DataZatrudnienia, StringFormat=\{0:dd.MM.yy HH:mm:ss\}}"/>
                 <DataGridTextColumn Header="Pensja" Binding="{Binding Pensja}"/>
             </DataGrid.Columns>
         </DataGrid>

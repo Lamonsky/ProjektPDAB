@@ -100,14 +100,14 @@ namespace ProjektPDAB.ViewModels
             return new List<CommandViewModel>
             {
                 //tu decyduje 
-                new CommandViewModel("Dostawy", new BaseCommand(ShowDostawy)),
-                new CommandViewModel("Pracownicy",new BaseCommand(ShowPracownicy)),
-                new CommandViewModel("Serwisy",new BaseCommand(ShowSerwisy)),
-                new CommandViewModel("Faktury",new BaseCommand(ShowFaktury)),
-                new CommandViewModel("Naprawy",new BaseCommand(ShowNaprawy)),
                 new CommandViewModel("Dostawcy",new BaseCommand(ShowDostawcy)),
+                new CommandViewModel("Dostawy", new BaseCommand(ShowDostawy)),
+                new CommandViewModel("Faktury",new BaseCommand(ShowFaktury)),
                 new CommandViewModel("Klienci",new BaseCommand(ShowKlienci)),
-
+                new CommandViewModel("Naprawy",new BaseCommand(ShowNaprawy)),
+                new CommandViewModel("Pracownicy",new BaseCommand(ShowPracownicy)),
+                new CommandViewModel("Produkty", new BaseCommand(ShowProdukty)),
+                new CommandViewModel("Serwisy",new BaseCommand(ShowSerwisy)),
             };
         }
         private void open(string name)
@@ -135,12 +135,95 @@ namespace ProjektPDAB.ViewModels
                 case "KlienciAdd":
                     CreateKlient();
                     break;
+                case "ShowDostawy":
+                    ShowDostawy();
+                    break;
+                case "ShowProdukty":
+                    ShowProdukty();
+                    break;
+                case "ShowKlienci":
+                    ShowKlienci();
+                    break;
+                case "ShowSerwisy":
+                    ShowSerwisy();
+                    break;
+                case "ProduktyAdd":
+                    CreateProdukt();
+                    break;
+                case "KategorieAdd":
+                    CreateKategorie();
+                    break;
+                case "SposobPlatnosciAdd":
+                    CreateSposobPlatnosci();
+                    break;
+                case "ShowFaktury":
+                    ShowFaktury();
+                    break;
+                case "GeneratorFaktur":
+                    GeneratorFaktur();
+                    break;
+                case "ShowFakturyForGenerator":
+                    ShowFakturyForGenerator();
+                    break;
+                case "ShowDostawcy":
+                    ShowDostawcy();
+                    break;
+                case "RaportyFaktur":
+                    ShowRaportyFaktur();
+                    break;
             }
         }
         #endregion
 
         #region Komendy do Buttonow
-       
+        private BaseCommand _DodajKategorieCommand;
+        public ICommand DodajKategorieCommand
+        {
+            get
+            {
+                if (_DodajKategorieCommand == null)
+                {
+                    _DodajKategorieCommand = new BaseCommand(() => Messenger.Default.Send("KategorieAdd"));
+                }
+                return _DodajKategorieCommand;
+            }
+        }
+        private BaseCommand _RaportyFakturCommand;
+        public ICommand RaportyFakturCommand
+        {
+            get
+            {
+                if (_RaportyFakturCommand == null)
+                {
+                    _RaportyFakturCommand = new BaseCommand(() => Messenger.Default.Send("RaportyFaktur"));
+                }
+                return _RaportyFakturCommand;
+            }
+        }
+        private BaseCommand _DodajSposobPlatnosciCommand;
+        public ICommand DodajSposobPlatnosciCommand
+        {
+            get
+            {
+                if (_DodajSposobPlatnosciCommand == null)
+                {
+                    _DodajSposobPlatnosciCommand = new BaseCommand(() => Messenger.Default.Send("SposobPlatnosciAdd"));
+                }
+                return _DodajSposobPlatnosciCommand;
+            }
+        }
+        private BaseCommand _GeneratorFakturCommand;
+        public ICommand GeneratorFakturCommand
+        {
+            get
+            {
+                if (_GeneratorFakturCommand == null)
+                {
+                    _GeneratorFakturCommand = new BaseCommand(() => Messenger.Default.Send("GeneratorFaktur"));
+                }
+                return _GeneratorFakturCommand;
+            }
+        }
         #endregion
         #region Funkcje wywolujace okna
         private void CreateDostawca()
@@ -198,6 +281,34 @@ namespace ProjektPDAB.ViewModels
         private void CreateNaprawa()
         {
             CreateWorkspace<NowaNaprawaViewModel>();
+        }
+        private void ShowProdukty()
+        {
+            ShowAllWorkspace<WszystkieProduktyViewModel>();
+        }
+        private void CreateProdukt()
+        {
+            CreateWorkspace<NowyProduktViewModel>();
+        }
+        private void CreateKategorie()
+        {
+            CreateWorkspace<NowaKategoriaViewModel>();
+        }
+        private void CreateSposobPlatnosci()
+        {
+            CreateWorkspace<NowySposobPlatnosciViewModel>();
+        }
+        private void GeneratorFaktur()
+        {
+            CreateWorkspace<GeneratorFakturViewModel>();
+        }
+        private void ShowFakturyForGenerator()
+        {
+            ShowAllWorkspace<WszystkieFakturyForGeneratorViewModel>();
+        }
+        private void ShowRaportyFaktur()
+        {
+            ShowAllWorkspace<RaportFakturViewModel>();
         }
         #endregion
     }

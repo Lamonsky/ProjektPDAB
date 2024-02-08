@@ -1,19 +1,50 @@
-﻿using ProjektPDAB.Models.Entities;
+﻿using GalaSoft.MvvmLight.Messaging;
+using ProjektPDAB.Helpers;
+using ProjektPDAB.Models.Entities;
 using ProjektPDAB.Models.EntitiesForView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace ProjektPDAB.ViewModels
 {
-    internal class NowaNaprawaViewModel : JedenViewModel<Naprawy>
+    class NowaNaprawaViewModel : JedenViewModel<Naprawy>
     {
+        #region Commands
+        private BaseCommand _ShowProduktyCommand;
+        public ICommand ShowProduktyCommand
+        {
+            get
+            {
+                if (_ShowProduktyCommand == null)
+                {
+                    _ShowProduktyCommand = new BaseCommand(() => Messenger.Default.Send("ShowProdukty"));
+                }
+                return _ShowProduktyCommand;
+            }
+        }
+        private BaseCommand _ShowSerwisyCommand;
+        public ICommand ShowSerwisyCommand
+        {
+            get
+            {
+                if (_ShowSerwisyCommand == null)
+                {
+                    _ShowSerwisyCommand = new BaseCommand(() => Messenger.Default.Send("ShowSerwisy"));
+                }
+                return _ShowSerwisyCommand;
+            }
+        }
+        #endregion
         #region Kontruktor
         public NowaNaprawaViewModel() : base("Naprawy")
         {
             item = new Naprawy();
+            Messenger.Default.Register<Produkty>(this, getWybranyProdukt);
+            Messenger.Default.Register<Serwisy>(this, getWybranySerwis);
         }
         #endregion
         #region Dane
@@ -33,7 +64,7 @@ namespace ProjektPDAB.ViewModels
             }
         }
         public int Idnaprawy { get; }
-        public DateOnly? DataNaprawy
+        public DateTime? DataNaprawy
         {
             get
             {
@@ -78,6 +109,22 @@ namespace ProjektPDAB.ViewModels
                 }
             }
         }
+        private string? _SerwisNazwa;
+        public string? SerwisNazwa
+        {
+            get
+            {
+                return _SerwisNazwa;
+            }
+            set
+            {
+                if (_SerwisNazwa != value)
+                {
+                    _SerwisNazwa = value;
+                    base.OnPropertyChanged(() => SerwisNazwa);
+                }
+            }
+        }
         public int? Idproduktu
         {
             get
@@ -90,6 +137,22 @@ namespace ProjektPDAB.ViewModels
                 {
                     item.Idproduktu = value;
                     OnPropertyChanged(() => Idproduktu);
+                }
+            }
+        }
+        private string? _ProduktNazwa;
+        public string? ProduktNazwa
+        {
+            get
+            {
+                return _ProduktNazwa;
+            }
+            set
+            {
+                if (_ProduktNazwa != value)
+                {
+                    _ProduktNazwa = value;
+                    base.OnPropertyChanged(() => ProduktNazwa);
                 }
             }
         }
@@ -133,6 +196,18 @@ namespace ProjektPDAB.ViewModels
                     "Anulowana"
                 };
             }
+        }
+        #endregion
+        #region ForeignKey
+        private void getWybranyProdukt(Produkty produkt)
+        {
+            Idproduktu = produkt.Idproduktu;
+            ProduktNazwa = produkt.Producent + " " + produkt.Nazwa + " " + produkt.Cena + "zł";
+        }
+        private void getWybranySerwis(Serwisy serwis)
+        {
+            Idserwisu = serwis.Idserwisu;
+            SerwisNazwa = serwis.NazwaSerwisu + " " + serwis.Ulica + " " + serwis.NrDomu + "/" + serwis.NrLokalu + " " + serwis.KodPocztowy + " " + serwis.Miejscowosc;
         }
         #endregion
     }

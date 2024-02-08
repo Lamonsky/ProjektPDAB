@@ -58,6 +58,18 @@ namespace ProjektPDAB.ViewModels
                 return _ModifyCommand;
             }
         }
+        private BaseCommand _RemoveCommand;
+        public ICommand RemoveCommand
+        {
+            get
+            {
+                if (_RemoveCommand == null)
+                {
+                    _RemoveCommand = new BaseCommand(() => remove());
+                }
+                return _RemoveCommand;
+            }
+        }
         private BaseCommand _RefreshCommand;
         public ICommand RefreshCommand
         {
@@ -131,7 +143,18 @@ namespace ProjektPDAB.ViewModels
         {
             Messenger.Default.Send(DisplayName + "Add");
         }
+<<<<<<< HEAD
+        private void modify()
+        {
+            
+        }
+        private void remove()
+        {
+            
+        }
+=======
         public abstract void modify();
+>>>>>>> 230d8b7aa4a3bc21626d30bfd4f5ef60fc46a281
         #endregion
 
         #region Sortowanie

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ProjektPDAB.ViewModels
 {
-    class NowyKlientViewModel : JedenViewModel<Klienci>, IDataErrorInfo 
+    class NowyKlientViewModel : JedenViewModel<Klienci> 
     {
         #region Konstruktor
         public NowyKlientViewModel() : base("Klienci")
@@ -220,43 +220,6 @@ namespace ProjektPDAB.ViewModels
                     OnPropertyChanged(() => NipPesel);
                 }
             }
-        }
-        public string this[string columnName]
-        {
-            get
-            {
-                switch (columnName)
-                {
-                    case nameof(Imie):
-                        {
-                            return Imie.ValidateFirstLetterUp();
-                        }
-                    case nameof(Nazwisko):
-                        {
-                            return Nazwisko.ValidateFirstLetterUp();
-                        }
-                    case nameof(Miejscowosc):
-                        {
-                            return Miejscowosc.ValidateFirstLetterUp();
-                        }
-                    case nameof(Ulica):
-                        {
-                            return Ulica.ValidateFirstLetterUp();
-                        }
-                    case nameof(NipPesel):
-                        {
-                            return NipPesel.NIPPeselValidator();
-                        }
-                    default: return string.Empty;
-                }
-            }
-        }
-
-        public string Error { get; }
-        public bool HasErrors => string.IsNullOrEmpty(Error);
-        public override bool IsValid()
-        {
-            return HasErrors;
         }
         #endregion
 

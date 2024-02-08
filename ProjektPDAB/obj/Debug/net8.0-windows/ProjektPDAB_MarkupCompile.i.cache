@@ -10,11 +10,19 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\App.xaml
+<<<<<<< HEAD
+24-1432970673
+
+78-791653155
+2591247249411
+Themes\Generic.xaml;Views\GeneratorFakturView.xaml;Views\MainWindow.xaml;Views\NowaDostawaView.xaml;Views\NowaFakturaView.xaml;Views\NowaKategoriaView.xaml;Views\NowaNaprawaView.xaml;Views\NowyDostawcaView.xaml;Views\NowyKlientView.xaml;Views\NowyPracownikView.xaml;Views\NowyProduktView.xaml;Views\NowySerwisView.xaml;Views\NowySposobPlatnosciView.xaml;Views\RaportFakturView.xaml;Views\Resources\ViewResources.xaml;Views\WszyscyDostawcyView.xaml;Views\WszyscyKlienciView.xaml;Views\WszyscyPracownicyView.xaml;Views\WszystkieDostawyView.xaml;Views\WszystkieFakturyForGeneratorView.xaml;Views\WszystkieFakturyView.xaml;Views\WszystkieNaprawyView.xaml;Views\WszystkieProduktyView.xaml;Views\WszystkieSerwisyView.xaml;
+=======
 18-1082952143
 
 67-824005438
 248623723009
 Themes\Generic.xaml;Views\MainWindow.xaml;Views\ModyfikujKlientView.xaml;Views\NowaDostawaView.xaml;Views\NowaFakturaView.xaml;Views\NowaNaprawaView.xaml;Views\NowyDostawcaView.xaml;Views\NowyKlientView.xaml;Views\NowyPracownikView.xaml;Views\NowySerwisView.xaml;Views\Resources\ViewResources.xaml;Views\WszyscyDostawcyView.xaml;Views\WszyscyKlienciView.xaml;Views\WszyscyPracownicyView.xaml;Views\WszystkieDostawyView.xaml;Views\WszystkieFakturyView.xaml;Views\WszystkieNaprawyView.xaml;Views\WszystkieSerwisyView.xaml;
+>>>>>>> 230d8b7aa4a3bc21626d30bfd4f5ef60fc46a281
 
 True
 

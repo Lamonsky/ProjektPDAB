@@ -1,4 +1,5 @@
-﻿using ProjektPDAB.Models.Entities;
+﻿using GalaSoft.MvvmLight.Messaging;
+using ProjektPDAB.Models.Entities;
 using ProjektPDAB.Models.EntitiesForView;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace ProjektPDAB.ViewModels
 {
     internal class WszystkieFakturyViewModel : WszystkieViewModel<FakturaForView>
     {
+        
         #region Konstruktor
         public WszystkieFakturyViewModel() : base("Faktury") { }
         #endregion

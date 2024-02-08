@@ -172,5 +172,25 @@ C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows
 C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows\ProjektPDAB.pdb
 C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows\ProjektPDAB.genruntimeconfig.cache
 C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows\ref\ProjektPDAB.dll
+<<<<<<< HEAD
+C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows\Views\WszystkieProduktyView.g.cs
+C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows\Views\WszystkieProduktyView.baml
+C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows\Views\NowyProduktView.g.cs
+C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows\Views\NowyProduktView.baml
+C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows\Views\NowaKategoriaView.g.cs
+C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows\Views\NowaKategoriaView.baml
+C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows\Views\NowySposobPlatnosciView.g.cs
+C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows\Views\NowySposobPlatnosciView.baml
+C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows\Views\GeneratorFakturView.g.cs
+C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows\Views\GeneratorFakturView.baml
+C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows\Views\WszystkieFakturyForGeneratorView.g.cs
+C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows\Views\WszystkieFakturyForGeneratorView.baml
+C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows\Views\RaportFakturView.g.cs
+C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows\Views\RaportFakturView.baml
+C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows\ProjektPDAB.csproj.ResolveComReference.cache
+C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\bin\Debug\net8.0-windows\CsvHelper.dll
+C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\bin\Debug\net8.0-windows\System.Linq.Async.dll
+=======
 C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows\Views\ModyfikujKlientView.g.cs
 C:\Users\damia\Documents\GitHub\ProjektPDAB\ProjektPDAB\obj\Debug\net8.0-windows\Views\ModyfikujKlientView.baml
+>>>>>>> 230d8b7aa4a3bc21626d30bfd4f5ef60fc46a281

@@ -62,18 +62,11 @@ namespace ProjektPDAB.ViewModels
         }
         private void SaveAndClose()
         {
-            if (IsValid())
-            {
-                //zaisujemy nowy obiekt
                 Save();
-                //zamykamy zakładke
+         
                 OnRequestClose();
-            }
-            else
-            {
-                MessageBox.Show(Application.Current.MainWindow, "Popraw błędy w formularzu");
-            }
-        }
+         
+         }
         public List<string> KrajComboBox
         {
             get
@@ -146,9 +139,6 @@ namespace ProjektPDAB.ViewModels
         }
         #endregion
 
-        public virtual bool IsValid()
-        {
-            return true;
-        }
+        
     }
 }

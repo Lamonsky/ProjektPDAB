@@ -16,12 +16,14 @@ public partial class Faktura
     [StringLength(50)]
     public string? Numer { get; set; }
 
-    public DateOnly? DataWystawienia { get; set; }
+    [Column(TypeName = "datetime")]
+    public DateTime? DataWystawienia { get; set; }
 
     [Column("IDKlienta")]
     public int? Idklienta { get; set; }
 
-    public DateOnly? TerminPlatnosci { get; set; }
+    [Column(TypeName = "datetime")]
+    public DateTime? TerminPlatnosci { get; set; }
 
     [Column("IDSposobuPlatnosci")]
     public int? IdsposobuPlatnosci { get; set; }

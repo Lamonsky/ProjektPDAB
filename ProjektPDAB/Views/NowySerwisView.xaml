@@ -8,86 +8,100 @@
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Expander Grid.Row="0" IsExpanded="True" Header="Dane ogólne">
+
+        <!-- Sekcja: Dane ogólne -->
+        <Expander Grid.Row="0" Header="Dane ogólne" IsExpanded="True">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="3*"/>
-                    <ColumnDefinition Width="3*"/>
                 </Grid.ColumnDefinitions>
-                <Label Content="Data dokumentu" Grid.Column="1"/>
-                <DatePicker Grid.Column="2" Text="{Binding Path=KiedyDodal, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <Label Content="Data dokumentu:" Grid.Column="0" VerticalAlignment="Center"/>
+                <DatePicker Grid.Column="1" SelectedDate="{Binding Path=KiedyDodal, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
             </Grid>
         </Expander>
-        <Expander Grid.Row="1" IsExpanded="True" Header="Informacje o serwisie">
+
+        <!-- Sekcja: Informacje o serwisie -->
+        <Expander Grid.Row="1" Header="Informacje o serwisie" IsExpanded="True">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
+
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="3*"/>
-                    <ColumnDefinition Width="3*"/>
                 </Grid.ColumnDefinitions>
-                <Label Content="Nazwa Serwisu:" Grid.Row="0" Grid.Column="1"/>
-                <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding Path=NazwaSerwisu, UpdateSourceTrigger=PropertyChanged}"/>
-                <Label Content="E-Mail do Serwisu:" Grid.Row="1" Grid.Column="1"/>
-                <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=EMail, UpdateSourceTrigger=PropertyChanged}"/>
-                <Label Content="Telefon do serwisu" Grid.Row="2" Grid.Column="1"/>
-                <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=Telefon, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <Label Content="Nazwa Serwisu:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=NazwaSerwisu, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+
+                <Label Content="E-Mail do Serwisu:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=EMail, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+
+                <Label Content="Telefon do serwisu:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=Telefon, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
             </Grid>
         </Expander>
-         <Expander Grid.Row="2" IsExpanded="True" Header="Dane Adresowe">
-     <Grid>
-         <Grid.RowDefinitions>
-             <RowDefinition Height="auto"/>
-             <RowDefinition Height="auto"/>
-             <RowDefinition Height="auto"/>
-             <RowDefinition Height="auto"/>
-             <RowDefinition Height="auto"/>
-             <RowDefinition Height="auto"/>
-         </Grid.RowDefinitions>
-         <Grid.ColumnDefinitions>
-             <ColumnDefinition Width="2*"/>
-             <ColumnDefinition Width="2*"/>
-             <ColumnDefinition Width="3*"/>
-             <ColumnDefinition Width="3*"/>
-         </Grid.ColumnDefinitions>
-         <Label Content="Miejscowość:" Grid.Row="0" Grid.Column="1"/>
-         <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding Path=Miejscowosc, UpdateSourceTrigger=PropertyChanged}"/>
-         <Label Content="Ulica:" Grid.Row="1" Grid.Column="1"/>
-         <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=Ulica, UpdateSourceTrigger=PropertyChanged}"/>
-         <Grid Row="3" Grid.ColumnSpan="4">
-             <Grid.ColumnDefinitions>
-                 <ColumnDefinition Width="2*"/>
-                 <ColumnDefinition Width="auto"/>
-                 <ColumnDefinition Width="50"/>
-                 <ColumnDefinition Width="auto"/>
-                 <ColumnDefinition Width="50"/>
-                 <ColumnDefinition Width="auto"/>
-                 <ColumnDefinition Width="100"/>
-                 <ColumnDefinition Width="3*"/>
-             </Grid.ColumnDefinitions>
-             <Label Grid.Column="1" Content="Nr Domu:"/>
-             <TextBox Grid.Column="2" Text="{Binding Path=NrDomu, UpdateSourceTrigger=PropertyChanged}"/>
-             <Label Grid.Column="3" Content="Nr Lokalu:"/>
-             <TextBox Grid.Column="4" Text="{Binding Path=NrLokalu, UpdateSourceTrigger=PropertyChanged}"/>
-             <Label Grid.Column="5" Content="Kod pocztowy:"/>
-             <TextBox Grid.Column="6" Text="{Binding Path=KodPocztowy, UpdateSourceTrigger=PropertyChanged}"/>
-         </Grid>
-         <Label Content="Województwo:" Grid.Row="4" Grid.Column="1"/>
-         <ComboBox Grid.Row="4" Grid.Column="2" ItemsSource="{Binding Path=WojewodztwaComboBox}" Text="{Binding Path=Wojewodztwo, UpdateSourceTrigger=PropertyChanged}"/>
-         <Label Content="Kraj:" Grid.Row="5" Grid.Column="1"/>
-         <ComboBox Grid.Row="5" Grid.Column="2" ItemsSource="{Binding Path=KrajComboBox}" Text="{Binding Path=Kraj, UpdateSourceTrigger=PropertyChanged}"/>
-     </Grid>
- </Expander>
+
+        <!-- Sekcja: Dane Adresowe -->
+        <Expander Grid.Row="2" Header="Dane Adresowe" IsExpanded="True">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Content="Miejscowość:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=Miejscowosc, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+
+                <Label Content="Ulica:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=Ulica, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+
+                <!-- Wiersz: Nr Domu, Nr Lokalu, Kod Pocztowy -->
+                <Grid Grid.Row="3" Grid.ColumnSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="1" Content="Nr Domu:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Column="2" Text="{Binding Path=NrDomu, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+                    <Label Grid.Column="3" Content="Nr Lokalu:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Column="4" Text="{Binding Path=NrLokalu, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+                    <Label Grid.Column="5" Content="Kod Pocztowy:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Column="6" Text="{Binding Path=KodPocztowy, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+                </Grid>
+
+                <Label Content="Województwo:" Grid.Row="4" Width="100" HorizontalAlignment="Left" Grid.Column="0" VerticalAlignment="Center"/>
+                <ComboBox Grid.Row="4" Grid.Column="1" Width="150" HorizontalAlignment="Left" ItemsSource="{Binding Path=WojewodztwaComboBox}" Text="{Binding Path=Wojewodztwo, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+
+                <Label Content="Kraj:" Grid.Row="5" Grid.Column="0" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <ComboBox Grid.Row="5" Grid.Column="1" Width="150" HorizontalAlignment="Left" ItemsSource="{Binding Path=KrajComboBox}" Text="{Binding Path=Kraj, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+            </Grid>
+        </Expander>
     </Grid>
+
 </local:JedenViewBase>

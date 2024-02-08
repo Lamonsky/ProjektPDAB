@@ -11,8 +11,8 @@ namespace ProjektPDAB.Models.EntitiesForView
         #region Dane
         public int IdFaktury { get; set; }
         public string? Numer { get; set; }
-        public DateOnly? DataWystawienia { get; set; }
-        public DateOnly? TerminPlatnosci { get; set; }
+        public DateTime? DataWystawienia { get; set; }
+        public DateTime? TerminPlatnosci { get; set; }
         //Zamiast IdKlienta
         public string? Imie { get; set; }
         public string? Nazwisko { get; set; }

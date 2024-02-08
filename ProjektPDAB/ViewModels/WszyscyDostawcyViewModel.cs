@@ -1,4 +1,5 @@
-﻿using ProjektPDAB.Models.Context;
+﻿using GalaSoft.MvvmLight.Messaging;
+using ProjektPDAB.Models.Context;
 using ProjektPDAB.Models.Entities;
 using ProjektPDAB.Models.EntitiesForView;
 using System;
@@ -12,6 +13,25 @@ namespace ProjektPDAB.ViewModels
 {
     public class WszyscyDostawcyViewModel : WszystkieViewModel<Dostawcy>
     {
+        #region Commands
+        private Dostawcy _WybranyDostawca;
+        public Dostawcy WybranyDostawca
+        {
+            set
+            {
+                if (_WybranyDostawca != value)
+                {
+                    _WybranyDostawca = value;
+                    Messenger.Default.Send(_WybranyDostawca);
+                    OnRequestClose();
+                }
+            }
+            get
+            {
+                return _WybranyDostawca;
+            }
+        }
+        #endregion
         #region Konstruktor
         public WszyscyDostawcyViewModel() : base("Dostawcy") { }
         #endregion
