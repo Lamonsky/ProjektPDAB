@@ -44,7 +44,7 @@ namespace ProjektPDAB.Views
     ///     <MyNamespace:JedenViewBase/>
     ///
     /// </summary>
-    public class JedenViewBase : UserControl
+    public class JedenViewBase : System.Windows.Controls.UserControl
     {
         static JedenViewBase()
         {

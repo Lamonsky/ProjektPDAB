@@ -119,11 +119,6 @@ namespace ProjektPDAB.ViewModels
                 List = new ObservableCollection<Dostawcy>(List.OrderBy(item => item.Kraj));
             }
         }
-
-        public override void modify()
-        {
-            throw new NotImplementedException();
-        }
         #endregion
     }
 }

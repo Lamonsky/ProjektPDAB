@@ -130,11 +130,6 @@ namespace ProjektPDAB.ViewModels
                 List = new ObservableCollection<Pracownicy>(List.OrderBy(item => item.Pensja));
             }
         }
-
-        public override void modify()
-        {
-            throw new NotImplementedException();
-        }
         #endregion
     }
 }

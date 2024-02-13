@@ -14,8 +14,6 @@ using System.Windows.Input;
 
 namespace ProjektPDAB.ViewModels
 {
-    //
-    //
     public abstract class WszystkieViewModel<T> : WorkspaceViewModel
     {
         #region DB
@@ -44,18 +42,6 @@ namespace ProjektPDAB.ViewModels
                     _AddCommand = new BaseCommand(() => add());
                 }
                 return _AddCommand;
-            }
-        }
-        private BaseCommand _ModifyCommand;
-        public ICommand ModifyCommand
-        {
-            get
-            {
-                if (_ModifyCommand == null)
-                {
-                    _ModifyCommand = new BaseCommand(() => modify());
-                }
-                return _ModifyCommand;
             }
         }
         private BaseCommand _RemoveCommand;
@@ -137,24 +123,15 @@ namespace ProjektPDAB.ViewModels
         }
         #endregion
         #region Pomocniczy
-        //
         public abstract void load();
         private void add()
         {
             Messenger.Default.Send(DisplayName + "Add");
         }
-<<<<<<< HEAD
-        private void modify()
-        {
-            
-        }
         private void remove()
         {
             
         }
-=======
-        public abstract void modify();
->>>>>>> 230d8b7aa4a3bc21626d30bfd4f5ef60fc46a281
         #endregion
 
         #region Sortowanie

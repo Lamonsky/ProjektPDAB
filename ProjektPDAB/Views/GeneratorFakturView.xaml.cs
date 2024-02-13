@@ -28,7 +28,7 @@ namespace ProjektPDAB.Views
             try
             {
                 this.IsEnabled = false;
-                PrintDialog printDialog = new PrintDialog();
+                System.Windows.Controls.PrintDialog printDialog = new System.Windows.Controls.PrintDialog();
                 if (printDialog.ShowDialog() == true)
                 {
                     printDialog.PrintVisual(print, "invoice");

@@ -98,11 +98,6 @@ namespace ProjektPDAB.ViewModels
                 List = new ObservableCollection<NaprawyForView>(List.OrderBy(item => item.NazwaKategorii));
             }
         }
-
-        public override void modify()
-        {
-            throw new NotImplementedException();
-        }
         #endregion
     }
 }

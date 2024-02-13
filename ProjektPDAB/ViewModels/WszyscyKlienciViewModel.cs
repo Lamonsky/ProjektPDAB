@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 ﻿using GalaSoft.MvvmLight.Messaging;
 using ProjektPDAB.Models.Entities;
-=======
 ﻿using ProjektPDAB.Models.Entities;
 using ProjektPDAB.Views;
->>>>>>> 230d8b7aa4a3bc21626d30bfd4f5ef60fc46a281
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -61,9 +58,6 @@ namespace ProjektPDAB.ViewModels
                         NipPesel = Klienci.NipPesel
                     }
                 );
-        }
-        public override void modify()
-        {
         }
         public override List<string> GetComboBoxSortList()
         {

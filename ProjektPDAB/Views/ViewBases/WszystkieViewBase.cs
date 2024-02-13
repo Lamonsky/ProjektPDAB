@@ -44,7 +44,7 @@ namespace ProjektPDAB.Views
     ///     <MyNamespace:WszystkieViewBase/>
     ///
     /// </summary>
-    public class WszystkieViewBase : UserControl
+    public class WszystkieViewBase : System.Windows.Controls.UserControl
     {
         static WszystkieViewBase()
         {

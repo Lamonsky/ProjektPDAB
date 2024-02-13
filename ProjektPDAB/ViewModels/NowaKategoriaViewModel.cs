@@ -28,7 +28,7 @@ namespace ProjektPDAB.ViewModels
                 {
                     item.KiedyDodal = value;
                     OnPropertyChanged(() => KiedyDodal);
-                }
+                }   
             }
         }
         public int Idkategorii
